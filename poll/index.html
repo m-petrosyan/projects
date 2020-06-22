@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+  <body>
+
+<div id="polls">
+
+  <div class="poll" data-cont="0" onclick="start(this)">
+    <div class="shkala"></div>
+    <span class="name">Գագիկ</span>
+    <span class="count"></span>
+    <span class="change"  onclick="changename(this)">change</span>
+  </div>
+  <div class="perc"></div>
+
+
+
+  <div class="poll" data-cont="0" onclick="start(this)">
+    <div class="shkala"></div>
+    <span class="name">Արսեն</span>
+    <span class="count"></span>
+    <span class="change"  onclick="changename(this)">change</span>
+  </div>
+  <div class="perc"></div>
+</div>
+
+  <button id="addpoll" onclick="add()">+</button>
+  <div id="vote"></div>
+
+  </body>
+
+
+<script>
+
+var color =['#44AFA0', '#E65945' , '#FED766','#009FB7','#2B4556']
+var colorarray = 0
+var change = true
+var bul2 = false;
+
+
+function add() {
+
+  document.getElementById('polls').innerHTML+=
+'<div class="poll" data-cont="0" onclick="start(this)"><div  class="shkala"></div><span class="name">Նոր</span><span class="count"></span>    <span class="change"  onclick="changename(this)">change</span></div><div class="perc"></div>'
+}
+
+$(document).click(()=>{
+  $('.change').html('change')
+  change = true
+})
+function changename(div) {
+parent = $(this).closest('div').html('true')
+    event.stopPropagation()
+if(change){
+ change = false;
+   $('.change').not(parent).html('change')
+  $(div).html('<input type="text" name="" value="գրի" class="inp">  <button type="button" name="button"  onclick="ok(this)">ok</button>')
+console.log("changename ");
+
+}
+
+
+}
+function ok(divval){
+  event.stopPropagation()
+  change=true
+  val= $(divval).prev().val()
+
+   vvv = $(divval).closest("div").children(".name").html(val)
+    // alert(vvv)
+      $('.change').html('change')
+    console.log(vvv);
+
+
+    // $(div).innerHTML=''
+    //   change=false
+    // console.log(vvv);
+}
+
+function start(div) {
+
+  if (colorarray>=color.length) {
+    colorarray=0
+  }
+  // if (!change) {
+    if  ($(div).children('.shkala').css('background-color') == 'rgba(0, 0, 0, 0)' ){
+        $(div).children(".shkala").css({'background': color[colorarray]})
+        colorarray++
+        // alert()
+
+        }
+        console.log($(div).children('.shkala').css('background-color'));
+
+  clas = document.getElementsByClassName('poll')
+
+  clickcount = div.getAttribute("data-cont");
+  div.setAttribute('data-cont', ++clickcount)
+  $(div).children(".count").html(clickcount+ "&nbsp ձայն")
+  var allcount = 0
+
+    for (var i = 0; i < clas.length; i++) {
+      allcount+= parseInt(document.getElementsByClassName('poll')[i].getAttribute("data-cont"));
+    }
+
+    for (var j = 0; j < clas.length; j++){
+       pollnum = document.getElementsByClassName('poll')[j].getAttribute("data-cont");
+        var b = 100*pollnum/allcount;
+        document.getElementsByClassName('perc')[j].innerHTML=  Math.round(b)+'%'
+        document.getElementsByClassName('shkala')[j].style.width=b+"%"
+        console.log(colorarray);
+    }
+
+    document.getElementById('vote').innerHTML= allcount+"&nbsp Ձայն"
+  // }
+}
+
+
+
+</script>
+
+
+
+<style>
+
+ body{
+   -webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+outline: 0;
+width: 600px;
+    margin: 0 auto;
+ }
+  .name,.count,.change{
+    z-index: 5;
+    color: white;
+    position: relative;
+    padding-left: 10px;
+  }
+/* .change{
+  margin-top: 50px;
+} */
+
+  .poll{
+    padding: 20px;
+    color: white;
+    font-size: 25px;
+    margin: 10px;
+    border-radius: 8px;
+    width: 500px;
+    background:rgb(82, 82, 82);
+    transition: 1s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shkala {
+      position: absolute;
+      background-color: none;
+      left: 0px;
+      top:0px;
+      width: 0%;
+      height: 100%;
+      z-index: 1;
+      transition: 1s;
+  }
+/*
+   .poll:first-child::before {
+      background: #44AFA0 #E65945;
+  }
+
+  .poll:last-child::before {
+      background: #E65945;
+  }  */
+
+  .perc{
+      display: inline;
+      float: right;
+      margin-top: -52px;
+  }
+
+  #polls{
+    margin: 0 auto;
+    display: inline;
+  }
+
+  #vote{
+    background: #f7f7f7;
+    color: gray;
+    border-radius: 5px;
+    width: 500px;
+    height: 50px;
+    text-align: center;
+    line-height: 46px;
+    margin-left: 30px;
+  }
+
+  #addpoll{
+    width: 500px;
+    height: 50px;
+    color: white;
+    font-size: 36px;
+    border: none;
+    margin-left: 30px;
+	  transition:0.5s
+  }
+
+  #addpoll:hover{
+  background:#E3DE8F;
+  transition:0.5s
+  }
+
+  #addpoll:active{
+  background:#64B6AC;
+  transition:0.5s
+  }
+</style>
+
+
+</html>
