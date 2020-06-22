@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Իքսիկ / նոլիկ</title>
+  </head>
+  <body onload="noric()">
+
+<div id="result">
+  <span id="resulttext"></span>
+</div>
+
+      <div class="horiz" id="horiz">a</div>
+      <div class="horiz">b</div>
+      <div class="horiz">c</div>
+
+
+    <div id="vertical">
+      <div class="vert">1</div>
+      <div class="vert">2</div>
+      <div class="vert">3</div>
+    </div>
+
+<div id="form"></div>
+
+<script>
+
+
+result = document.getElementById("result");
+
+
+
+
+function noric(){
+    document.getElementById("form").innerHTML="";
+    result.style.visibility = "hidden";
+	 cikl=0;
+	console.log(cikl)
+	
+    for(var i=0;i<9;i++){
+
+      document.getElementById("form").innerHTML += '<div class="divs"  onclick="divcl(this)"></div>'
+
+    }
+}
+
+
+var start = 0;
+
+  function divcl(divclick){
+    if(divclick.innerHTML == ''){
+      start++;
+      cikl++;
+
+      if(start% 2==0){
+	  // остаток при деление 
+
+          divclick.innerHTML ='x';
+      }
+      else{
+         divclick.innerHTML ='o';
+      }
+
+    }
+  chackwinner()
+    console.log(cikl);
+  }
+
+
+function chackwinner(){
+    var allblock = document.getElementsByClassName("divs");
+
+//իքսիկներ
+
+// result.style.visibility = "visible"
+    if(allblock[0].innerHTML=="x" && allblock[1].innerHTML=="x" && allblock[2].innerHTML=="x" ){resulttext.innerHTML = "Հաղթեց x_ը a/1 , b/1 , c/1 գծով"+'<button type="button" id="again" name="button" onclick="noric()">Նորից</button>' ;result.style.visibility = "visible" }
+  else if(allblock[3].innerHTML=="x" && allblock[4].innerHTML=="x" && allblock[5].innerHTML=="x" ){resulttext.innerHTML = "Հաղթեց x_ը a/2 , b/2 , c/2 գծով"+'<button type="button" id="again" name="button" onclick="noric()">Նորից</button>' ;result.style.visibility = "visible" }
+  else if(allblock[6].innerHTML=="x" && allblock[7].innerHTML=="x" && allblock[8].innerHTML=="x" ){resulttext.innerHTML = "Հաղթեց x_ը a/3 , b/3 , a/3 գծով"+'<button type="button" id="again" name="button" onclick="noric()">Նորից</button>' ;result.style.visibility = "visible" }
+
+  else if(allblock[0].innerHTML=="x" && allblock[3].innerHTML=="x" && allblock[6].innerHTML=="x" ){resulttext.innerHTML = "Հաղթեց x_ը a/1 , a/2 , a/3 գծով"+'<button type="button" id="again" name="button" onclick="noric()">Նորից</button>' ;result.style.visibility = "visible" }
+  else if(allblock[1].innerHTML=="x" && allblock[4].innerHTML=="x" && allblock[7].innerHTML=="x" ){resulttext.innerHTML = "Հաղթեց x_ը b/1 , b/2 , b/3 գծով"+'<button type="button" id="again" name="button" onclick="noric()">Նորից</button>' ;result.style.visibility = "visible" }
+  else if(allblock[2].innerHTML=="x" && allblock[5].innerHTML=="x" && allblock[8].innerHTML=="x" ){resulttext.innerHTML = "Հաղթեց x_ը c/1 , c/2 , c/3 գծով"+'<button type="button" id="again" name="button" onclick="noric()">Նորից</button>' ;result.style.visibility = "visible" }
+
+  else if(allblock[0].innerHTML=="x" && allblock[4].innerHTML=="x" && allblock[8].innerHTML=="x" ){resulttext.innerHTML = "Հաղթեց x_ը a/1 , b/2 , c/3 գծով"+'<button type="button" id="again" name="button" onclick="noric()">Նորից</button>' ;result.style.visibility = "visible" }
+  else if(allblock[2].innerHTML=="x" && allblock[4].innerHTML=="x" && allblock[6].innerHTML=="x" ){resulttext.innerHTML = "Հաղթեց x_ը c/1 , b/2 , a/3 գծով"+'<button type="button" id="again" name="button" onclick="noric()">Նորից</button>' ;result.style.visibility = "visible" }
+
+
+//նոլիկներ
+  else if(allblock[0].innerHTML=="o" && allblock[1].innerHTML=="o" && allblock[2].innerHTML=="o" ){resulttext.innerHTML = "Հաղթեց o_ն a/1 , b/1 , c/1 գծով"+'<button type="button" id="again" name="button" onclick="noric()">Նորից</button>' ;result.style.visibility = "visible" }
+  else if(allblock[3].innerHTML=="o" && allblock[4].innerHTML=="o" && allblock[5].innerHTML=="o" ){resulttext.innerHTML = "Հաղթեց o_ն a/2 , b/2 , c/2 գծով"+'<button type="button" id="again" name="button" onclick="noric()">Նորից</button>' ;result.style.visibility = "visible" }
+  else if(allblock[6].innerHTML=="o" && allblock[7].innerHTML=="o" && allblock[8].innerHTML=="o" ){resulttext.innerHTML = "Հաղթեց o_ն a/3 , b/3 , c/3 գծով"+'<button type="button" id="again" name="button" onclick="noric()">Նորից</button>' ;result.style.visibility = "visible" }
+
+  else if(allblock[0].innerHTML=="o" && allblock[3].innerHTML=="o" && allblock[6].innerHTML=="o" ){resulttext.innerHTML = "Հաղթեց o_ն a/1 , a/2 , a/3 գծով"+'<button type="button" id="again" name="button" onclick="noric()">Նորից</button>' ;result.style.visibility = "visible" }
+  else if(allblock[1].innerHTML=="o" && allblock[4].innerHTML=="o" && allblock[7].innerHTML=="o" ){resulttext.innerHTML = "Հաղթեց o_ն b/1 , b/2 , b/3 գծով"+'<button type="button" id="again" name="button" onclick="noric()">Նորից</button>' ;result.style.visibility = "visible" }
+  else if(allblock[2].innerHTML=="o" && allblock[5].innerHTML=="o" && allblock[8].innerHTML=="o" ){resulttext.innerHTML = "Հաղթեց o_ն c/1 , c/2 , c/3 գծով"+'<button type="button" id="again" name="button" onclick="noric()">Նորից</button>' ;result.style.visibility = "visible" }
+
+  else if(allblock[0].innerHTML=="o" && allblock[4].innerHTML=="o" && allblock[8].innerHTML=="o" ){resulttext.innerHTML = "Հաղթեց o_ն a/1 , b/2 , c/3 գծով"+'<button type="button" id="again" name="button" onclick="noric()">Նորից</button>' ;result.style.visibility = "visible" }
+  else if(allblock[2].innerHTML=="o" && allblock[4].innerHTML=="o" && allblock[6].innerHTML=="o" ){resulttext.innerHTML = "Հաղթեց o_ն c/1 , b/2 , a/3 գծով"+'<button type="button" id="again" name="button" onclick="noric()">Նորից</button>' ;result.style.visibility = "visible" }
+
+     else if(cikl==9){
+
+       resulttext.innerHTML = "<span style='color:#cccccc;'>հաղթող չկա <img id='sad' src='cry.gif' alt='լաց'/> </span>"+'<button type="button" id="again" name="button" onclick="noric()">Նորից</button>' ;result.style.visibility = "visible"
+	  }
+}
+
+
+
+</script>
+
+
+<style>
+
+@font-face {
+  font-family: font1;
+  src: url(DejaVuSans-Bold.ttf);
+}
+
+body{
+  background-color: rgb(245, 245, 245);
+
+}
+
+
+.horiz{
+  float: left;
+  background: #E1B753;
+  width:100px; height: 100px;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  font-family: arial;
+  line-height: 100px;
+
+}
+
+#horiz{
+  margin-left: 100px;
+}
+
+
+#vertical{
+clear: left;
+float: left;
+display: inline-block;
+}
+
+.vert{
+  background: #789F8A;
+  width:100px; height: 100px;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  font-family: arial;
+  line-height: 100px;
+
+}
+
+
+  #form{
+  float: left;
+  width: 300px;
+  height: 300px;
+
+  }
+
+  .divs{
+  width: 98px;
+  height: 98px;
+  line-height: 98px;
+  background: #E1694E;
+  border: 1px solid white;
+  color: white;
+  float: left;
+  font-size: 40px;
+  font-family: arial;
+  text-align: center;
+  }
+
+  .divs:hover{
+  transition: 0.3s;
+  background-color: #e85534;
+  }
+
+  .divs:active{
+  transition: 0.2s;
+  background-color: rgb(215, 111, 26);
+
+  }
+
+
+  .divs,.horiz,.vert{
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: 0;
+  }
+
+#result{
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top:0;
+  position: absolute;
+  background-color: rgba(0,0,0,0.8);
+  visibility: hidden;
+
+}
+
+#resulttext{
+  text-align: center;
+  font-size: 30px;
+  line-height: 193px;
+  position: relative;
+  display: block;
+  width: 500px;
+  height: 200px;
+  top: 27%;
+  left: 40%;
+  background-color: #3176b5;
+  color: white;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: 0;
+}
+
+
+#again{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: #6621b5;
+  border: 0px;
+  color: white;
+  padding: 20px;
+  font-family: font1;
+  font-size: 20px;
+
+}
+
+#again:hover{
+  background-color: #4f1a3d;
+
+}
+
+#sad{
+  width: 73px;
+  height: 74px;
+  top: 46px;
+  right: 68px;
+  position: absolute;
+}
+</style>
+
+
+  </body>
+</html>

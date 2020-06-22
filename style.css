@@ -1,0 +1,29 @@
+
+body{
+  font-family: font4;
+  margin:0px;
+  padding: 0px;
+}
+
+#main{
+  width: 600px;
+  height: 200px;
+  margin: 0 auto;
+  background-color: #282C34;
+  border-radius: 10px;
+}
+
+ul{
+  line-height: 200px;
+}
+
+ul>li{
+    display: inline-block;
+    margin-left: 40px;
+    font-size: 20px
+}
+
+a{
+      color: white;
+     text-decoration: none;
+}
