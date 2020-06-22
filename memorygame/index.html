@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>memory game</title>
+  </head>
+  <body>
+
+
+
+
+
+    <div id="conteiner">
+      <div id="win">
+        <span id="wintext">
+          <span > Win  </span> <br>
+          <span>clicks</span>  <span id="clicks"></span>
+        </span>
+      </div>
+
+    </div>
+
+    <div id="size">
+	  <button id="boxsize1" onclick="resize180()">
+        120px x 180px
+      </button>
+      <button id="boxsize2" onclick="resize225()">
+        150px x 225px
+      </button>
+      <button id="boxsize3" onclick="resize300()">
+        200px x 300px
+      </button>
+    </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </body>
+
+<style media="screen">
+
+body{
+  background: #000;
+  background-image: url("images/bg.jpg");
+  background-repeat: no-repeat, repeat;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#conteiner{
+  width: 1200px;
+  /* height: 1000px; */
+  position: relative;
+  margin: 0 auto;
+  /* background: yellow; */
+}
+
+.box{
+  width: 150px;
+  height: 225px;
+  margin: 18px 10px auto;
+ // background: #F25F5C;
+  background-image: url("images/bg2.jpg");
+  background-size: 150px 225px;
+  border-radius: 5px;
+  display: inline-block;
+  text-align:center;
+  font-size: 40px;
+  color: white;
+  overflow:hidden;
+  transform: rotateY(0deg);
+  transition: 0.3s;
+}
+
+.img{
+  width: 150px;
+  height: 225px;
+}
+
+
+#boxsize1,#boxsize2,#boxsize3{
+  background: rgba(0, 0, 0, 0.4);
+  margin: 20px;
+  color: white;
+  font-size: 20px;
+  font-family: cursive;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+#size{
+  margin: 50px auto;
+  text-align: center;
+}
+button{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: 0;
+}
+#win{
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: 1s;
+  z-index: 1;
+  font-size: 100px;
+  text-align: center;
+  font-family: fantasy;
+  opacity: 0;
+  visibility: hidden;
+}
+#wintext{
+  top: 28%;
+  left: 40%;
+  position: absolute;
+}
+</style>
+
+
+  <script type="text/javascript">
+
+  setInterval(function(){
+ //находим теги img и ставим атрибуты
+     $('img').attr({
+        "ondrag":"return false",
+        "ondragdrop":"return false",
+        "ondragstart":"return false"
+     })
+
+ }, 300);
+
+   var next = true
+   var ok = 10
+   var clicks = 0
+   var win = false
+   var box = document.getElementsByClassName('box')
+   var img = document.getElementsByClassName('img')
+   var cont = document.getElementById('conteiner')
+   var joker = darthvader = hulk = batman = ironman = spawn = superman = spiderman = capitanamerica = thor =  0
+   var massive = ['joker', 'darthvader', 'hulk','batman','ironman','spawn','superman','spiderman','capitanamerica','thor'];
+
+   var massiveIndex  = Math.floor(Math.random() * massive.length);
+
+
+
+
+  for (var i = 0; i < 20; i++) {
+    document.getElementById('conteiner').innerHTML += '<span class="box" num="'+i+'" person="" onclick="start(this)"><img src="" class="img"></span>'
+  }
+
+
+   for (var i = 0; i < box.length; i++) {
+
+     //
+     // if (box[i].getAttribute('person').length == 2) {
+     //
+     // }
+
+     again()
+
+     function again() {
+
+         massiveIndex  = Math.floor(Math.random() * massive.length);
+       if (massive[massiveIndex] == 'joker' && joker==2 ||massive[massiveIndex]  =='darthvader' && darthvader==2 ||massive[massiveIndex]  =='hulk' && hulk==2 || massive[massiveIndex]  =='batman' && batman==2 ||massive[massiveIndex]  =='ironman' && ironman==2 ||massive[massiveIndex]  =='spawn' && spawn==2 || massive[massiveIndex]  =='superman' && superman==2 ||massive[massiveIndex]  =='spiderman' && spiderman==2 ||massive[massiveIndex]  =='capitanamerica' && capitanamerica==2 || massive[massiveIndex]  =='thor' && thor==2) {
+           again()
+      }
+
+	// 	if(box[i].getAttribute("person").length>=2){
+	// 	 again()
+	// 	alert(box[i].getAttribute("person"))
+	// }
+
+
+
+
+  }
+
+
+
+  if (massive[massiveIndex] == 'joker' && joker!=2) {
+    joker++
+  }
+  if (massive[massiveIndex] == 'darthvader' && darthvader!=2) {
+    darthvader++
+  }
+  if (massive[massiveIndex] == 'hulk' && hulk!=2) {
+    hulk++
+  }
+  if (massive[massiveIndex] == 'batman' && batman!=2) {
+    batman++
+  }
+  if (massive[massiveIndex] == 'ironman' && ironman!=2) {
+    ironman++
+  }
+  if (massive[massiveIndex] == 'spawn' && spawn!=2) {
+    spawn++
+  }
+  if (massive[massiveIndex] == 'superman' && superman!=2) {
+    superman++
+  }
+  if (massive[massiveIndex] == 'spiderman' && spiderman!=2) {
+    spiderman++
+  }
+  if (massive[massiveIndex] == 'capitanamerica' && capitanamerica!=2) {
+    capitanamerica++
+  }
+  if (massive[massiveIndex] == 'thor' && thor!=2) {
+    thor++
+  }
+
+
+box[i].innerHTML= '<img src="images/'+massive[massiveIndex]+'.jpg" class="img">'
+box[i].setAttribute('person',massive[massiveIndex])
+box[i].classList.add(massive[massiveIndex]);
+$(box[i]).children(".img").css({"opacity": "0"});
+
+
+
+}
+
+
+
+//console.log(document.getElementsByClassName(+batman+).length);
+
+
+
+
+
+
+
+
+    // console.log('joker = '+joker +', darth vader = '+darth vader +', hulk = '+hulk);
+  // }
+
+
+v = "nothing"
+b = "nothing"
+
+  function start(x) {
+
+clicks++
+
+if (next && !win) {
+    next= false
+
+
+
+    for (var z = 0; z < box.length; z++) {
+      img[z].style.opacity='0'
+    }
+
+
+      $(x).css({
+        'transform': 'rotateY(90deg)',
+      })
+
+
+      setTimeout(function(){
+        $(x).css({
+          'transition': '0.5s',
+        })
+
+        setTimeout(function(){
+        $(x).css({
+          'transition': '0.5s',
+          'transform': 'rotateY(0deg)',
+        })
+
+        $(x).children(".img").css({"opacity": "1"});
+        }, 100);
+      }, 300)
+
+
+      if (x.getAttribute('person')==v && b.getAttribute('num') != x.getAttribute('num') ) {
+        $(b).children(".img").css({"opacity": "1"});
+        win=true
+        console.log(v+" - "+x.getAttribute('person'));
+        setTimeout(function(){
+          x.style.opacity="0"
+          b.style.opacity="0"
+          x.style.visibility="hidden"
+          b.style.visibility="hidden"
+          win=false
+        }, 1000)
+          // alert(x.getAttribute('person'))
+          ok--
+          console.log(ok);
+          if (ok==0) {
+            setTimeout(function(){
+            document.getElementById('win').style.visibility="visible"
+            document.getElementById('win').style.opacity="1"
+            document.getElementById('clicks').innerHTML = clicks
+            }, 1500)
+          }
+        }
+
+        else {
+                console.log(v+" - "+x.getAttribute('person'));
+          v =  x.getAttribute('person')
+          b = x
+        }
+
+
+
+}
+
+  setTimeout(function(){
+    next = true
+  }, 200)
+
+}
+
+
+function resize300() {
+  for (var i = 0; i < box.length; i++) {
+    conteiner.style.width="1200px"
+    box[i].style.backgroundSize=" 200px 300px";
+    box[i].style.width= "200px"
+    img[i].style.width= "200px"
+    box[i].style.height= "300px"
+    img[i].style.height= "300px"
+
+  }
+
+}
+
+function resize225() {
+  for (var i = 0; i < box.length; i++) {
+    conteiner.style.width="1200px"
+    box[i].style.backgroundSize=" 150px 225px";
+    box[i].style.width= "150px"
+    img[i].style.width= "150px"
+    box[i].style.height= "225px"
+    img[i].style.height= "225px"
+
+  }
+}
+
+function resize180() {
+  for (var i = 0; i < box.length; i++) {
+    conteiner.style.width="1000px"
+    box[i].style.backgroundSize=" 120px 180px";
+    box[i].style.width= "120px"
+    img[i].style.width= "120px"
+    box[i].style.height= "180px"
+    img[i].style.height= "180px"
+
+  }
+
+
+}
+
+
+
+  </script>
+
+</html>
