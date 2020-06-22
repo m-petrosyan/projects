@@ -1,0 +1,341 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Edukite HTML5">
+
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="css/EDU_CLEAN.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/keyboard.css">
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/touch-enabled.js"></script>
+    <script src='js/mathjax/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+</head>
+
+<body>
+<div id="wrapper">
+    <div id="BG"></div>
+    <div id="main_header"></div>
+    <div id="content">
+        <div id="titleBar">
+            <div id="discCont" style="position:absolute; left:85px; top:10px; height:45px; width:1140px;">
+                <p id="disc" style="margin-left:0px; margin-top:-3px; color:#212121;font-size:24px;font-family:Roboto_reg"></p>
+            </div>
+        </div>
+        <div id="stick-top"></div>
+        <div id="stick-bottom"></div>
+        <div id="mainContent">
+            <div id='contentImg'></div>
+
+
+            <div id="main">
+
+
+                <div id="periodic_table_open" onclick="elements_table_open_close(event.target)"> <!-- ստանում ենք կոնկրետ էլեմենտի կլիկը -->
+                    <img src="img/periodictable.png" alt="" id="open_el_img">
+                </div>
+
+                <div id="tips">
+                    <div id="tips_conteiner">
+                                <span id="tips_icon" onclick="tips_instruction()" style="z-index: 2;cursor: pointer;">
+                                    <img src="img/Tips.png" alt="" id="tips" style="height: 40px;width: 120px; right: 0px;">
+                                </span>
+                        <span id="tips_instruction" style="z-index: 1;width: 0px;top: 15px;">
+                                    <img src="img/Tip text.png" alt="" style="width: 100%;">
+                                    <span id="tips_close_img" onclick="tips_instruction()">
+                                        <img src="img/Close.png" alt="" style="height: 30px">
+                                    </span>
+                                </span>
+                    </div>
+                </div>
+
+
+                <div id="elements_settings">
+
+
+                    <div id="name" class="input_line">
+                        <div class="text">
+                            <p>
+                                Name of element:
+                            </p>
+                        </div>
+                        <div class="input_div" empty="yes" data-name="name" onclick="selectInput(this, alert_hide)"></div>
+                        <div class="answer_icon"> <img src="" alt="" height="30px" class="answer_img"> </div>
+                    </div>
+
+                    <div id="element_detals" class="input_line">
+                        <div id="symbol">
+                            <div class="text">
+                                <p>
+                                    Symbol of particle:
+                                </p>
+                            </div>
+                            <div class="input_div" empty="yes" data-name="symbol" onclick="selectInput(this, alert_hide)"></div>
+                        </div>
+
+                        <div id="atomic" class="input_line">
+                            <div class="text">
+                                <p>
+                                    Atomic number <i>(Z)</i>:
+                                </p>
+                            </div>
+                            <div class="input_div" empty="yes" data-name="atomic" onclick="selectInput(this, alert_hide)"></div>
+                        </div>
+
+                        <div id="mass" class="input_line">
+                            <div class="text">
+                                <p>
+                                    Mass number <i>(A)</i>:
+                                </p>
+                            </div>
+                            <div class="input_div" empty="yes" data-name="mass" onclick="selectInput(this, alert_hide)"></div>
+                        </div>
+
+                        <div id="number_neutrons" class="input_line">
+                            <div class="text">
+                                <p>
+                                    Number of neutrons <i>(N)</i>:
+                                </p>
+                            </div>
+                            <div class="input_div" empty="yes" data-name="num_of_ne" onclick="selectInput(this, alert_hide)"></div>
+                        </div>
+
+                        <div id="number_electrons" class="input_line">
+                            <div class="text">
+                                <p>
+                                    Number of electrons:
+                                </p>
+                            </div>
+                            <div class="input_div" empty="yes" data-name="num_of_ele" onclick="selectInput(this, alert_hide)"></div>
+                        </div>
+                    </div>
+
+
+                    <div id="key_board"></div>
+
+
+                </div>
+
+
+
+
+                <div id="elements_table" onclick="elements_table_open_close(event.target)">
+
+		<span id="pte_img">
+			<img src="img/periodictable_elements/pte.png" alt="">
+		</span>
+
+                    <div id="close_legend2" style="float: right;margin-top: 13px;margin-right: 20px; cursor: pointer" >
+                        <img src="img/periodictable_elements/CloseBt.png">
+                    </div>
+
+                    <div id="elements_group_1">
+
+                        <div class="element bg_1" symbol="H" img="T0001.png" onclick="element_legend(this)"> <div class="el_number"><p>1</p></div> <div class="el_symbol"><p> H</p></div> </div>
+                        <div class="element bg_6" symbol="He" img="T0002.png" onclick="element_legend(this)"> <div class="el_number"><p>2</p></div> <div class="el_symbol"><p> He</p></div> </div>
+                        <div class="element bg_2" symbol="Li" img="T0003.png" onclick="element_legend(this)"> <div class="el_number"><p>3</p></div> <div class="el_symbol"><p> Li</p></div> </div>
+                        <div class="element bg_3" symbol="Be" img="T0004.png" onclick="element_legend(this)"> <div class="el_number"><p>4</p></div> <div class="el_symbol"><p> Be</p></div> </div>
+
+                        <div class="element bg_6" symbol="Ne" img="T0010.png" onclick="element_legend(this)"> <div class="el_number"><p>10</p></div> <div class="el_symbol"><p>Ne</p> </div> </div>
+                        <div class="element bg_5" symbol="F" img="T0009.png" onclick="element_legend(this)"> <div class="el_number"><p>9</p></div> <div class="el_symbol"><p> F</p></div> </div>
+                        <div class="element bg_1" symbol="O" img="T0008.png" onclick="element_legend(this)"> <div class="el_number"><p>8</p></div> <div class="el_symbol"><p> O</p></div> </div>
+                        <div class="element bg_1" symbol="N" img="T0007.png" onclick="element_legend(this)"> <div class="el_number"><p>7</p></div> <div class="el_symbol"><p> N</p></div> </div>
+                        <div class="element bg_1" symbol="C" img="T0006.png" onclick="element_legend(this)"> <div class="el_number"><p>6</p></div> <div class="el_symbol"><p> C</p></div> </div>
+                        <div class="element bg_4" symbol="B" img="T0005.png" onclick="element_legend(this)"> <div class="el_number"><p>5</p></div> <div class="el_symbol"><p> B</p></div> </div>
+
+                        <div class="element bg_2" symbol="Na" img="T0011.png" onclick="element_legend(this)"> <div class="el_number"><p>11</p></div> <div class="el_symbol"><p>Na</p> </div> </div>
+                        <div class="element  bg_3" symbol="Mg" img="T0012.png" onclick="element_legend(this)"> <div class="el_number"><p>12</p></div> <div class="el_symbol"><p>Mg</p> </div> </div>
+
+                        <div class="element bg_6" symbol="Ar" img="T0018.png" onclick="element_legend(this)"> <div class="el_number"><p>18</p></div> <div class="el_symbol"><p>Ar</p> </div> </div>
+                        <div class="element bg_5" symbol="Cl" img="T0017.png" onclick="element_legend(this)"> <div class="el_number"><p>17</p></div> <div class="el_symbol"><p>Cl</p> </div> </div>
+                        <div class="element bg_1" symbol="S" img="T0016.png" onclick="element_legend(this)"> <div class="el_number"><p>16</p></div> <div class="el_symbol"><p>S</p> </div> </div>
+                        <div class="element bg_1" symbol="P" img="T0015.png" onclick="element_legend(this)"> <div class="el_number"><p>15</p></div> <div class="el_symbol"><p>P</p> </div> </div>
+                        <div class="element bg_4" symbol="Si" img="T0014.png" onclick="element_legend(this)"> <div class="el_number"><p>14</p></div> <div class="el_symbol"><p>Si</p> </div> </div>
+                        <div class="element bg_7" symbol="Al" img="T0013.png" onclick="element_legend(this)"> <div class="el_number"><p>13</p></div> <div class="el_symbol"><p>Al</p> </div> </div>
+
+                        <div class="element bg_2" symbol="K" img="T0019.png" onclick="element_legend(this)"> <div class="el_number"><p>19</p></div> <div class="el_symbol"><p>K</p> </div> </div>
+                        <div class="element bg_3" symbol="Ca" img="T0020.png" onclick="element_legend(this)"> <div class="el_number"><p>20</p></div> <div class="el_symbol"><p>Ca</p> </div> </div>
+                        <div class="element bg_8" symbol="Sc" img="T0021.png" onclick="element_legend(this)"> <div class="el_number"><p>21</p></div> <div class="el_symbol"><p>Sc</p> </div> </div>
+                        <div class="element bg_8" symbol="Ti" img="T0022.png" onclick="element_legend(this)"> <div class="el_number"><p>22</p></div> <div class="el_symbol"><p>Ti</p> </div> </div>
+                        <div class="element bg_8" symbol="V" img="T0023.png" onclick="element_legend(this)"> <div class="el_number"><p>23</p></div> <div class="el_symbol"><p>V</p> </div> </div>
+                        <div class="element bg_8" symbol="Cr" img="T0024.png" onclick="element_legend(this)"> <div class="el_number"><p>24</p></div> <div class="el_symbol"><p>Cr</p> </div> </div>
+                        <div class="element bg_8" symbol="Mn" img="T0025.png" onclick="element_legend(this)"> <div class="el_number"><p>25</p></div> <div class="el_symbol"><p>Mn</p> </div> </div>
+                        <div class="element bg_8" symbol="Fe" img="T0026.png" onclick="element_legend(this)"> <div class="el_number"><p>26</p></div> <div class="el_symbol"><p>Fe</p> </div> </div>
+                        <div class="element bg_8" symbol="Co" img="T0027.png" onclick="element_legend(this)"> <div class="el_number"><p>27</p></div> <div class="el_symbol"><p>Co</p> </div> </div>
+                        <div class="element bg_8" symbol="Ni" img="T0028.png" onclick="element_legend(this)"> <div class="el_number"><p>28</p></div> <div class="el_symbol"><p>Ni</p> </div> </div>
+                        <div class="element bg_8" symbol="Cu" img="T0029.png" onclick="element_legend(this)"> <div class="el_number"><p>29</p></div> <div class="el_symbol"><p>Cu</p> </div> </div>
+                        <div class="element bg_8" symbol="Zn" img="T0030.png" onclick="element_legend(this)"> <div class="el_number"><p>30</p></div> <div class="el_symbol"><p>Zn</p> </div> </div>
+                        <div class="element bg_7" symbol="Ga" img="T0031.png" onclick="element_legend(this)"> <div class="el_number"><p>31</p></div> <div class="el_symbol"><p>Ga</p> </div> </div>
+                        <div class="element bg_4" symbol="Ge" img="T0032.png" onclick="element_legend(this)"> <div class="el_number"><p>32</p></div> <div class="el_symbol"><p>Ge</p> </div> </div>
+                        <div class="element bg_4" symbol="As" img="T0033.png" onclick="element_legend(this)"> <div class="el_number"><p>33</p></div> <div class="el_symbol"><p>As</p> </div> </div>
+                        <div class="element bg_1" symbol="Se" img="T0034.png" onclick="element_legend(this)"> <div class="el_number"><p>34</p></div> <div class="el_symbol"><p>Se</p> </div> </div>
+                        <div class="element bg_5" symbol="Br" img="T0035.png" onclick="element_legend(this)"> <div class="el_number"><p>35</p></div> <div class="el_symbol"><p>Br</p> </div> </div>
+                        <div class="element bg_6" symbol="Kr" img="T0036.png" onclick="element_legend(this)"> <div class="el_number"><p>36</p></div> <div class="el_symbol"><p>Kr</p> </div> </div>
+
+                        <div class="element bg_2" symbol="Rb" img="T0037.png" onclick="element_legend(this)"> <div class="el_number"><p>37</p></div> <div class="el_symbol"><p>Rb</p> </div> </div>
+                        <div class="element bg_3" symbol="Sr" img="T0038.png" onclick="element_legend(this)"> <div class="el_number"><p>38</p></div> <div class="el_symbol"><p>Sr</p> </div> </div>
+                        <div class="element bg_8" symbol="Y" img="T0039.png" onclick="element_legend(this)"> <div class="el_number"><p>39</p></div> <div class="el_symbol"><p>Y</p> </div> </div>
+                        <div class="element bg_8" symbol="Zr" img="T0040.png" onclick="element_legend(this)"> <div class="el_number"><p>40</p></div> <div class="el_symbol"><p>Zr</p> </div> </div>
+                        <div class="element bg_8" symbol="Nb" img="T0041.png" onclick="element_legend(this)"> <div class="el_number"><p>41</p></div> <div class="el_symbol"><p>Nb</p> </div> </div>
+                        <div class="element bg_8" symbol="Mo" img="T0042.png" onclick="element_legend(this)"> <div class="el_number"><p>42</p></div> <div class="el_symbol"><p>Mo</p> </div> </div>
+                        <div class="element bg_8" symbol="Tc" img="T0043.png" onclick="element_legend(this)"> <div class="el_number"><p>43</p></div> <div class="el_symbol"><p>Tc</p> </div> </div>
+                        <div class="element bg_8" symbol="Ru" img="T0044.png" onclick="element_legend(this)"> <div class="el_number"><p>44</p></div> <div class="el_symbol"><p>Ru</p> </div> </div>
+                        <div class="element bg_8" symbol="Rh" img="T0045.png" onclick="element_legend(this)"> <div class="el_number"><p>45</p></div> <div class="el_symbol"><p>Rh</p> </div> </div>
+                        <div class="element bg_8" symbol="Pd" img="T0046.png" onclick="element_legend(this)"> <div class="el_number"><p>46</p></div> <div class="el_symbol"><p>Pd</p> </div> </div>
+                        <div class="element bg_8" symbol="Ag" img="T0047.png" onclick="element_legend(this)"> <div class="el_number"><p>47</p></div> <div class="el_symbol"><p>Ag</p> </div> </div>
+                        <div class="element bg_8" symbol="Cd" img="T0048.png" onclick="element_legend(this)"> <div class="el_number"><p>48</p></div> <div class="el_symbol"><p>Cd</p> </div> </div>
+                        <div class="element bg_7" symbol="In" img="T0049.png" onclick="element_legend(this)"> <div class="el_number"><p>49</p></div> <div class="el_symbol"><p>In</p> </div> </div>
+                        <div class="element bg_7" symbol="Sn" img="T0050.png" onclick="element_legend(this)"> <div class="el_number"><p>50</p></div> <div class="el_symbol"><p>Sn</p> </div> </div>
+                        <div class="element bg_4" symbol="Sb" img="T0051.png" onclick="element_legend(this)"> <div class="el_number"><p>51</p></div> <div class="el_symbol"><p>Sb</p> </div> </div>
+                        <div class="element bg_4" symbol="Te" img="T0052.png" onclick="element_legend(this)"> <div class="el_number"><p>52</p></div> <div class="el_symbol"><p>Te</p> </div> </div>
+                        <div class="element bg_5" symbol="I" img="T0053.png" onclick="element_legend(this)"> <div class="el_number"><p>53</p></div> <div class="el_symbol"><p>I</p> </div> </div>
+                        <div class="element bg_6" symbol="Xe" img="T0054.png" onclick="element_legend(this)"> <div class="el_number"><p>54</p></div> <div class="el_symbol"><p>Xe</p> </div> </div>
+
+                    </div>
+
+                    <div id="elements_group_2">
+
+                        <div class="element_gray"> <div class="el_number"><p> 55</p></div> <div class="el_symbol"><p>Cs </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>56 </p></div> <div class="el_symbol"><p>Ba </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p style="font-size: 12px"> 57-71</p></div> <div class="el_symbol"><p style="font-size:12px;margin-top:10px;">La-Lu </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p> 72</p></div> <div class="el_symbol"><p>Hf </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p> 73</p></div> <div class="el_symbol"><p>Ta </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p> 74</p></div> <div class="el_symbol"><p>W </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p> 75</p></div> <div class="el_symbol"><p>Re </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p> 76</p></div> <div class="el_symbol"><p>Os </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p> 77</p></div> <div class="el_symbol"><p>IR </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p> 78</p></div> <div class="el_symbol"><p>Pt </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p> 79</p></div> <div class="el_symbol"><p>Au </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p> 80</p></div> <div class="el_symbol"><p>Hg </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p> 81</p></div> <div class="el_symbol"><p>Tl </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p> 82</p></div> <div class="el_symbol"><p>Pb </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p> 83</p></div> <div class="el_symbol"><p>Bi </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p> 84</p></div> <div class="el_symbol"><p>Po </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p> 85</p></div> <div class="el_symbol"><p>At </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p> 86</p></div> <div class="el_symbol"><p>Rn </p> </div> </div>
+
+                        <div class="element_gray" style="clear:both"> <div class="el_number"><p>87 </p></div> <div class="el_symbol"><p>Fr </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>88 </p></div> <div class="el_symbol"><p>Ra </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p style="font-size: 12px">89-103 </p></div> <div class="el_symbol"><p style="font-size:12px;margin-top:10px;">Ac-Lr </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>104 </p></div> <div class="el_symbol"><p>Rf </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>105 </p></div> <div class="el_symbol"><p>Db </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>106 </p></div> <div class="el_symbol"><p>Sg </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>107 </p></div> <div class="el_symbol"><p>Bh </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>108 </p></div> <div class="el_symbol"><p>Hs </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>109 </p></div> <div class="el_symbol"><p>Mt </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>110 </p></div> <div class="el_symbol"><p>Ds </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>111 </p></div> <div class="el_symbol"><p>Rg </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>112 </p></div> <div class="el_symbol"><p>Cn </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>113 </p></div> <div class="el_symbol"><p>Nh </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>114 </p></div> <div class="el_symbol"><p>Fl </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>115 </p></div> <div class="el_symbol"><p>Mc </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>116 </p></div> <div class="el_symbol"><p>Lv </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>117 </p></div> <div class="el_symbol"><p>Ts </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>118 </p></div> <div class="el_symbol"><p>Og </p> </div> </div>
+                    </div>
+
+                    <div id="elements_group_3">
+
+                        <div class="element_gray"> <div class="el_number"><p>57</p></div> <div class="el_symbol"><p>La </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>58</p></div> <div class="el_symbol"><p>Ce </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>59</p></div> <div class="el_symbol"><p>Pr </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>60</p></div> <div class="el_symbol"><p>Nd </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>61</p></div> <div class="el_symbol"><p>Pm </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>62</p></div> <div class="el_symbol"><p>Sm </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>63</p></div> <div class="el_symbol"><p>Eu </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>64</p></div> <div class="el_symbol"><p>Gd </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>65</p></div> <div class="el_symbol"><p>Tb </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>66</p></div> <div class="el_symbol"><p>Dy </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>67</p></div> <div class="el_symbol"><p>Ho </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>68</p></div> <div class="el_symbol"><p>Er </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>69</p></div> <div class="el_symbol"><p>Tm </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>70</p></div> <div class="el_symbol"><p>Yb </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>71</p></div> <div class="el_symbol"><p>Lu </p> </div> </div>
+
+                        <div class="element_gray"> <div class="el_number"><p>89</p></div> <div class="el_symbol"><p>Ac </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>90</p></div> <div class="el_symbol"><p>Th </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>91</p></div> <div class="el_symbol"><p>Pa </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>92</p></div> <div class="el_symbol"><p>U </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>93</p></div> <div class="el_symbol"><p>Np </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>94</p></div> <div class="el_symbol"><p>Pu </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>95</p></div> <div class="el_symbol"><p>Am </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>96</p></div> <div class="el_symbol"><p>Cm </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>97</p></div> <div class="el_symbol"><p>Bk </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>98</p></div> <div class="el_symbol"><p>Cf </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>99</p></div> <div class="el_symbol"><p>Es </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>100</p></div> <div class="el_symbol"><p>Fm </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>101</p></div> <div class="el_symbol"><p>Md </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>102</p></div> <div class="el_symbol"><p>No </p> </div> </div>
+                        <div class="element_gray"> <div class="el_number"><p>103</p></div> <div class="el_symbol"><p>Lr </p> </div> </div>
+                    </div>
+
+                    <div id="element_legend">
+                        <div id="close_legend" onclick="close_legend()">
+                            <img src="img/periodictable_elements/CloseBt.png">
+                        </div>
+                        <div id="img_legend"><img src="img/periodictable_elements/T0001.png" height="163px" alt="" id="this_legend_img"></div>
+                    </div>
+
+
+                    <div id="mjax"></div>
+
+
+
+
+
+                </div>
+
+                <div id="navBar">
+                </div>
+                <div id="instPanel">
+                    <div id="insTxtPanel">
+                        <ol>
+                            <li>Look at the information that is given for the atom or ion very carefully․</li>
+                            <li>Insert all the missing information. </li>
+                            <li>Make sure to spell the name of the element correctly.</li>
+                            <li>Make sure to use capital and small letters correctly when you insert the symbol.</li>
+                            <li>Use the superscript function on the keypad to insert charges on ions. </li>
+                            <li>Click on the CHECK button to see whether you were correct.</li>
+                        </ol>
+                    </div>
+                    <div id="insCloseBtn"></div>
+                </div>
+            </div>
+
+            <div id="main_footer"></div>
+
+        </div>
+    </div>
+</div>
+
+<script src="js/temp.js"></script>
+<script src="js/script.js"></script>
+<script src="js/keyboard.js"></script>
+
+<script type="text/javascript">
+
+
+
+</script>
+
+<style media="screen">
+    .MJXc-display{
+        display: inline;
+    }
+
+    .mjx-chtml{
+        font-size: 70%;
+        top: -5px;
+        line-height: 4px;
+    }
+    .MJXc-stacked > * {
+        top:-2px
+    }
+
+</style>
+</body>
+</html>

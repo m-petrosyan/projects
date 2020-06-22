@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Edukite HTML5">
+
+<title>title</title>
+<link rel="stylesheet" type="text/css" href="css/EDU_CLEAN.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+</head>
+
+<body>
+<div id="wrapper">
+
+<div id="BG"></div>
+
+	<div id="main_header"></div>
+
+    <div id="content">
+    	<div id="titleBar">
+    		<div id="discCont" style="position:absolute; left:85px; top:10px; height:45px; width:1140px;">
+    		<p id="disc" style="margin-left:0px; margin-top:-5px; color:#666666;font-size:22px;"></p>
+    		</div>
+
+    	</div>
+		<div id="stick-top" style="top:55px"></div>
+		<div id="stick-bottom"></div>
+    	<div id="mainContent">
+
+
+
+				<div id="main">
+
+					<span id="title_text">Periodic Table of Elements</span>
+
+				    <div id="elements">
+
+				      <div el_name="Hydrogen" class="element selective bg_3399FF before_1" onclick="select(this,'#3399FF')"  style="float:left;border-left: 1px solid #000"><span>1</span><span>H</span><span>1</span></div>
+				      <div el_name="Helium" class="element selective bg_8359FF before_18" onclick="select(this,'#8359FF')"  style="float:right;border-left: 1px solid #000;width: 64px;"><span>2</span><span>He</span><span>4</span></div>
+
+				      <div el_name="Lithium" class="element selective bg_FF3333" onclick="select(this,'#FF3333')"  style="border-top: 3px solid;clear:both;float:left;border-left: 1px solid #000"><span>3</span><span>Li</span><span>7</span></div>
+				      <div el_name="Beryllium" class="element selective bg_FF9933 before_2" onclick="select(this,'#FF9933')"  style="border-top: 3px solid;float:left"><span>4</span><span>Be</span><span>9</span></div>
+				      <div el_name="Neon" class="element selective bg_8359FF" onclick="select(this,'#8359FF')"  style="float:right"><span>10</span><span>Ne</span><span>20</span></div>
+				      <div el_name="Fluorine" class="element selective bg_247BFF before_17" onclick="select(this,'#247BFF')"  style="float:right"><span>9</span><span>F</span><span>19</span></div>
+				      <div el_name="Oxygen" class="element selective bg_45B9E4 before_16" onclick="select(this,'#45B9E4')"  style="float:right"><span>8</span><span>O</span><span>16</span></div>
+				      <div el_name="Nitrogen" class="element selective bg_45B9E4 before_15" onclick="select(this,'#45B9E4')"  style="float:right"><span>7</span><span>N</span><span>14</span></div>
+				      <div el_name="Carbon" class="element selective bg_45B9E4 before_14 " onclick="select(this,'#45B9E4')"  style="float:right"><span>6</span><span>C</span><span>12</span></div>
+				      <div el_name="Boron" class="element selective bg_66CC33 before_13 border" onclick="select(this,'#66CC33')"  style="float:right;width: 64px"><span>5</span><span>B</span><span>11</span></div>
+
+				      <div el_name="Sodium" class="element selective bg_FF3333" onclick="select(this,'#FF3333')"  style="clear: both;float:left;border-left: 1px solid #000"><span>11</span><span>Na</span><span>23</span></div>
+				      <div el_name="Magnesium" class="element selective bg_FF9933" onclick="select(this,'#FF9933')"  style="float:left"><span>12</span><span>Mg</span><span>24</span></div>
+				      <div el_name="Argon" class="element selective bg_8359FF" onclick="select(this,'#8359FF')"  style="float:right"><span>18</span><span>Ar</span><span>40</span></div>
+				      <div el_name="Chlorine" class="element selective bg_247BFF" onclick="select(this,'#247BFF')"  style="float:right"><span>17</span><span>Cl</span><span>35,3</span></div>
+				      <div el_name="Sulfur" class="element selective bg_45B9E4" onclick="select(this,'#45B9E4')"  style="float:right"><span>16</span><span>S</span><span>32</span></div>
+				      <div el_name="Phosphorus" class="element selective bg_45B9E4 " onclick="select(this,'#45B9E4')"  style="float:right"><span>15</span><span>P</span><span>31</span></div>
+				      <div el_name="Silicon" class="element selective bg_66CC33 border" onclick="select(this,'#66CC33')"  style="float:right;border-left: 3px solid #000;"><span>14</span><span>Si</span><span>28</span></div>
+				      <div el_name="Aluminium" class="element selective bg_B1E10F" onclick="select(this,'#B1E10F')"  style="float:right;border-left: 1px solid #000;width: 64px"><span>13</span><span>Al</span><span>27</span></div>
+
+				      <div el_name="Potassium" class="element selective bg_FF3333" onclick="select(this,'#FF3333')"  style="clear: both;float:left;border-left: 1px solid #000"><span>19</span><span>K</span><span>39</span></div>
+				      <div el_name="Calcium" class="element selective bg_FF9933" onclick="select(this,'#FF9933')"  style="float:left"><span>20</span><span>Ca</span><span>40</span></div>
+				      <div class="element no_selective before_3"><span>21</span><span>Sc</span><span>45</span></div>
+				      <div class="element no_selective before_4"><span>22</span><span>Ti</span><span>48</span></div>
+				      <div class="element no_selective before_5"><span>23</span><span>V</span><span>51</span></div>
+				      <div class="element no_selective before_6"><span>24</span><span>Cr</span><span>52</span></div>
+				      <div class="element no_selective before_7"><span>25</span><span>Mn</span><span>55</span></div>
+				      <div class="element no_selective before_8"><span>26</span><span>Fe</span><span>56</span></div>
+				      <div class="element no_selective before_9"><span>27</span><span>Co</span><span>59</span></div>
+				      <div class="element no_selective before_10"><span>28</span><span>Ni</span><span>59</span></div>
+				      <div class="element no_selective before_11"><span>29</span><span>Cu</span><span>63,5</span></div>
+				      <div class="element no_selective before_12"><span>30</span><span>Zn</span><span>65</span></div>
+				      <div el_name="Gallium" class="element selective bg_B1E10F" onclick="select(this,'#B1E10F')"  style="float:left"><span>31</span><span>Ga</span><span>70</span></div>
+				      <div el_name="Germanium" class="element selective bg_66CC33" onclick="select(this,'#66CC33')"  style=";float:left"><span>32</span><span>Ge</span><span>73</span></div>
+				      <div el_name="Arsenic" class="element selective bg_66CC33 border" onclick="select(this,'#66CC33')"  style="float:left"><span>33</span><span>As</span><span>75</span></div>
+				      <div el_name="Selenium" class="element selective bg_45B9E4 " onclick="select(this,'#45B9E4')"  style="float:left"><span>34</span><span>Se</span><span>79</span></div>
+				      <div el_name="Bromine" class="element selective bg_247BFF" onclick="select(this,'#247BFF')"  style="float:left"><span>35</span><span>Br</span><span>80</span></div>
+				      <div el_name="Krypton" class="element selective bg_8359FF" onclick="select(this,'#8359FF')"  style="float:left"><span>36</span><span>Kr</span><span>84</span></div>
+
+				      <div el_name="Rubidium" class="element selective bg_FF3333" onclick="select(this,'#FF3333')"  style="clear: both;float:left;border-left: 1px solid #000"><span>37</span><span>Rb</span><span>85</span></div>
+				      <div el_name="Strontium" class="element selective bg_FF9933" onclick="select(this,'#FF9933')"  style="float:left"><span>38</span><span>Sr</span><span>88</span></div>
+				      <div class="element no_selective"><span>39</span><span>Y</span><span>89</span></div>
+				      <div class="element no_selective"><span>40</span><span>Zr</span><span>91</span></div>
+				      <div class="element no_selective"><span>41</span><span>Nb</span><span>93</span></div>
+				      <div class="element no_selective"><span>42</span><span>Mo</span><span>96</span></div>
+				      <div class="element no_selective"><span>43</span><span>Tc</span><span>98</span></div>
+				      <div class="element no_selective"><span>44</span><span>Ru</span><span>101</span></div>
+				      <div class="element no_selective"><span>45</span><span>Rh</span><span>103</span></div>
+				      <div class="element no_selective"><span>46</span><span>Pd</span><span>106</span></div>
+				      <div class="element no_selective"><span>47</span><span>Ag</span><span>108</span></div>
+				      <div class="element no_selective"><span>48</span><span>Cd</span><span>112</span></div>
+				      <div el_name="Indium" class="element selective bg_B1E10F" onclick="select(this,'#B1E10F')"  style="float:left"><span>49</span><span>In</span><span>115</span></div>
+				      <div el_name="Tin" class="element selective bg_B1E10F" onclick="select(this,'#B1E10F')"  style=";float:left"><span>50</span><span>Sn</span><span>119</span></div>
+				      <div el_name="Antimony" class="element selective bg_66CC33" onclick="select(this,'#66CC33')"  style="float:left"><span>51</span><span>Sb</span><span>122</span></div>
+				      <div el_name="Tellurium" class="element selective bg_66CC33 border" onclick="select(this,'#66CC33')"  style="float:left"><span>52</span><span>Te</span><span>128</span></div>
+				      <div el_name="Iodine" class="element selective bg_247BFF " onclick="select(this,'#247BFF')"  style="float:left"><span>53</span><span>I</span><span>127</span></div>
+				      <div el_name="Xenon" class="element selective bg_8359FF" onclick="select(this,'#8359FF')"  style="float:left"><span>54</span><span>Xe</span><span>131</span></div>
+
+				      <div el_name="Cesium" class="element selective bg_FF3333" onclick="select(this,'#FF3333')"  style="clear: both;float:left;border-left: 1px solid #000"><span>55</span><span>Cs</span><span>133</span></div>
+				      <div el_name="Barium" class="element selective bg_FF9933" onclick="select(this,'#FF9933')"  style="float:left"><span>56</span><span>Ba</span><span>137</span></div>
+				      <div class="element no_selective"><span>57-71</span><span></span><span style="font-size:11px">lanthonoids</span></div>
+				      <div class="element no_selective"><span>72</span><span>Zr</span><span>178</span></div>
+				      <div class="element no_selective"><span>73</span><span>Nb</span><span>181</span></div>
+				      <div class="element no_selective"><span>74</span><span>Mo</span><span>184</span></div>
+				      <div class="element no_selective"><span>75</span><span>Tc</span><span>186</span></div>
+				      <div class="element no_selective"><span>76</span><span>Ru</span><span>190</span></div>
+				      <div class="element no_selective"><span>76</span><span>Rh</span><span>192</span></div>
+				      <div class="element no_selective"><span>78</span><span>Pd</span><span>195</span></div>
+				      <div class="element no_selective"><span>79</span><span>Ag</span><span>197</span></div>
+				      <div class="element no_selective"><span>80</span><span>Cd</span><span>201</span></div>
+				      <div el_name="Thallium" class="element selective bg_B1E10F" onclick="select(this,'#B1E10F')"  style="float:left"><span>81</span><span>Tl</span><span>204</span></div>
+				      <div el_name="Lead" class="element selective bg_B1E10F" onclick="select(this,'#B1E10F')"  style=";float:left"><span>82</span><span>Pb</span><span>207</span></div>
+				      <div el_name="Bismuth" class="element selective bg_B1E10F" onclick="select(this,'#B1E10F')"  style="float:left"><span>83</span><span>Bi</span><span>209</span></div>
+				      <div el_name="Polonium" class="element selective bg_66CC33" onclick="select(this,'#66CC33')"  style="float:left"><span>84</span><span>Po</span><span>209</span></div>
+				      <div el_name="Astatine" class="element selective bg_247BFF" onclick="select(this,'#247BFF')"  style="border-left: 3px solid #000;float:left"><span>85</span><span>At</span><span>210</span></div>
+				      <div el_name="Radon" class="element selective bg_8359FF" onclick="select(this,'#8359FF')"  style="float:left"><span>86</span><span>Rn</span><span>222</span></div>
+
+				      <div el_name="Francium" class="element selective bg_FF3333" onclick="select(this,'#FF3333')"  style="clear: both;float:left;border-left: 1px solid #000;border-bottom: 1px solid #000"><span>87</span><span>Fr</span><span>223</span></div>
+				      <div el_name="Radium" class="element selective bg_FF9933" onclick="select(this,'#FF9933')"  style="float:left;border-bottom: 1px solid #000"><span>88</span><span>Ra</span><span>226</span></div>
+				      <div class="element no_selective" style="border-bottom: 1px solid #000"><span>89-103</span><span></span><span style="font-size:13px">actinoids</span></div>
+				      <div class="element no_selective" style="border-bottom: 1px solid #000"><span>104</span><span>Rf</span><span>265</span></div>
+				      <div class="element no_selective" style="border-bottom: 1px solid #000"><span>105</span><span>Db</span><span>268</span></div>
+				      <div class="element no_selective" style="border-bottom: 1px solid #000"><span>106</span><span>Sg</span><span>271</span></div>
+				      <div class="element no_selective" style="border-bottom: 1px solid #000"><span>107</span><span>Bh</span><span>270</span></div>
+				      <div class="element no_selective" style="border-bottom: 1px solid #000"><span>108</span><span>Hs</span><span>277</span></div>
+				      <div class="element no_selective" style="border-bottom: 1px solid #000"><span>109</span><span>Mt</span><span>276</span></div>
+				      <div class="element no_selective" style="border-bottom: 1px solid #000"><span>110</span><span>Ds</span><span>281</span></div>
+				      <div class="element no_selective" style="border-bottom: 1px solid #000"><span>111</span><span>Rg</span><span>280</span></div>
+				      <div class="element no_selective" style="border-bottom: 1px solid #000"><span>112</span><span>Cn</span><span>285</span></div>
+				      <div el_name="Nihonium" class="element selective bg_B1E10F" onclick="select(this,'#B1E10F')"  style="float:left;border-bottom: 1px solid #000"><span>113</span><span>Nh</span><span>286</span></div>
+				      <div el_name="Flerovium" class="element selective bg_B1E10F" onclick="select(this,'#B1E10F')"  style=";float:left;border-bottom: 1px solid #000"><span>114</span><span>Fl</span><span>289</span></div>
+				      <div el_name="Moscovium" class="element selective bg_B1E10F" onclick="select(this,'#B1E10F')"  style="float:left;border-bottom: 1px solid #000"><span>115</span><span>Mc</span><span>289</span></div>
+				      <div el_name="Livermorium" class="element selective bg_B1E10F" onclick="select(this,'#B1E10F')"  style="float:left;border-bottom: 1px solid #000"><span>115</span><span>Lv</span><span>293</span></div>
+				      <div el_name="Tennessine" class="element selective bg_247BFF" onclick="select(this,'#247BFF')"  style="float:left;border-bottom: 1px solid #000"><span>117</span><span>Ts</span><span>294</span></div>
+				      <div el_name="Oganesson" class="element selective bg_8359FF" onclick="select(this,'#8359FF')"  style="float:left;border-bottom: 1px solid #000"><span>118</span><span>Og</span><span>294</span></div>
+
+						</div>
+
+						<div id="lewis_diagram">
+							<div id="close" onclick="close_diagram()"> <img src="img/close.png" width="20px" alt=""> </div>
+
+							<div id="selected_element">
+								<h3 id="element_name"></h3>
+								<h1 id="element_symbol"></h1>
+
+								<div id="check_area">
+									<div class="check_area check_style"></div>
+									<div class="check_area check_style"></div>
+									<div class="check_area check_style"></div>
+									<div class="check_area check_style"></div>
+									<div class="check_area check_style"></div>
+									<div class="check_area check_style"></div>
+									<div class="check_area check_style"></div>
+									<div class="check_area check_style"></div>
+								</div>
+
+							</div>
+
+
+							<div  id="dots_area">
+
+
+								<div id="area_description">
+										<img src="img/arrow.png" alt="" style="float: left;margin-top: 14px;margin-right: 12px;transform: scaleY(1.2)scaleX(0.7)rotate(269deg);">
+										<p style="font-weight: 100;font-size: 25px;font-family: Roboto_reg">Drag the dots into the circles provided<br> to complete the Lewis diagram</p>
+							  	</div>
+
+								<div id="this_dot"></div>
+
+									<div id="dots">
+										<div d_top="0px" d_left="0px" class="dot"></div>
+										<div d_top="0px" d_left="70px" class="dot"></div>
+										<div d_top="0px" d_left="140px" class="dot"></div>
+										<div d_top="0px" d_left="210px" class="dot"></div>
+										<div d_top="70px" d_left="0px" class="dot"></div>
+										<div d_top="70px" d_left="70px" class="dot"></div>
+										<div d_top="70px" d_left="140px" class="dot"></div>
+										<div d_top="70px" d_left="210px" class="dot"></div>
+										<span class="dotBg" style="left: 0px; top: 0px;"></span>
+										<span class="dotBg" style="left: 70px; top: 0px;"></span>
+										<span class="dotBg" style="left: 140px; top: 0px;"></span>
+										<span class="dotBg" style="left: 210px; top: 0px;"></span>
+										<span class="dotBg" style="left: 0px; top: 70px;"></span>
+										<span class="dotBg" style="left: 70px; top: 70px;"></span>
+										<span class="dotBg" style="left: 140px; top: 70px;"></span>
+										<span class="dotBg" style="left: 210px; top: 70px;"></span>
+									</div>
+							</div>
+						</div>
+
+				  </div>
+
+
+
+    	</div>
+
+    	<div id="navBar">
+
+
+    	</div>
+    	<div id="instPanel">
+    		<h3></h3>
+    		<div id="insTxtPanel">
+    			<p id="instTxt">
+  				<ol>
+					<li>Click on any of the elements in the coloured blocks to build its Lewis diagram.</li>
+					<li>Drag the provided electron dots into the circles. </li>
+					<li>Make sure you use the correct number of valence electrons and pair the dots correctly. </li>
+					<li>Click the CHECK button to see whether your diagram is correct. </li>
+				</ol>
+    		</div>
+    		<div id="insCloseBtn"></div>
+            </div>
+	</div>
+   <div id="main_footer"></div>
+
+</div>
+<script src="js/script.js"></script>
+<script src="js/touch-enabled.js"></script>
+</body>
+</html>

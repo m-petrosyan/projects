@@ -1,0 +1,417 @@
+@font-face {
+    font-family: "Roboto_med";
+    src: url("font/Roboto-Medium.ttf");
+}
+
+@font-face {
+    font-family: "Roboto_reg";
+    src: url("font/Roboto-Regular.ttf");
+}
+
+body{
+    font-family: Roboto_med;
+}
+p{
+    font-family: Roboto_med;
+}
+#main{
+    z-index: 1;
+    width: 95%;
+    height: 90%;
+    padding: 27px;
+    position: relative;
+
+}
+
+#name{
+    width: 710px;
+    height: 50px;
+    margin-left: 127px;
+}
+
+#element_detals{
+    width: 505px;
+    height: 400px;
+    float: left;
+}
+
+
+
+#key_board{
+    display: none;
+    margin-top: 35px;
+    overflow: hidden;
+    float: right;
+    width: 650px;
+    height: 367px;
+
+}
+
+#tips_close_img{
+    position: absolute;
+    right: 6px;
+    top:0px;
+    cursor: pointer;
+}
+
+.answer_icon{
+    float: left;
+    margin-left: 10px;
+}
+
+#symbol,#atomic,#mass,#number_neutrons,#number_electrons{
+    height: 50px;
+    margin-top: 25px;
+    float: right;
+    clear: both;
+}
+
+.text,.input_div{
+    float: left;
+}
+
+.text{
+    line-height: 45px;
+}
+
+.text>p{
+    font-family: Roboto_reg;
+    font-size: 29px;
+}
+
+.input_div{
+    position: relative;
+    width: 120px;
+    height: 45px;
+    border: 2px solid gray;
+    border-radius: 4px;
+    background: white;
+    margin-left: 20px;
+     /*overflow: hidden;*/
+    padding-left: 6px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 30px;
+    line-height: 49px;
+    color: #4C4C4C;
+}
+.input_div sup {
+    line-height: 10px;
+}
+#name>.input_div{
+    width: 400px;
+    border: 2px solid #ec3434;
+    line-height: 45px;
+    font-size: 22px;
+    text-align: left;
+}
+
+.done::after{
+    position: absolute;
+    content: '';
+    background-image: url(../img/tick.png);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    right: -60px;
+    top: 0px;
+}
+
+.error::after{
+    position: absolute;
+    content: '';
+    background-image: url(../img/Cross.png);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    right: -60px;
+    top: 0px;
+}
+
+#periodic_table_open{
+    position: absolute;
+    right: 20px;
+    cursor: pointer
+    /* z-index: -1; */
+}
+#periodic_table_open>img{
+    height: 100px;
+}
+
+#elements_settings{
+    /* display: none */
+}
+
+#elements_table{
+    display: none;
+    position: relative;
+    width: 1092px;
+    height: 470px;
+    top: -14px;
+    left: 0px;
+    background: #232323;
+    border-radius: 13px;
+    z-index: 3;
+}
+#elements_table::after{
+    content: "";
+    position: absolute;
+    right: -43px;
+    top: 91px;
+    height: 5px;
+    background: transparent;
+    border: 19px solid transparent;
+    border-left: 39px solid #232323;
+}
+
+#pte_img{
+    position: absolute;
+    left: 27%;
+    top: 15px;
+    z-index: -1;
+}
+
+#pte_img>img{
+    height: 160px
+}
+
+.element{
+    cursor: pointer;
+
+}
+.element:hover{
+    border: 1px solid white
+}
+
+.element,.element_gray{
+    float:left;
+    height: 45px;
+    width: 45px;
+    color: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    z-index: 5
+}
+.element_gray{
+    background: #5f5f5f
+}
+
+.el_symbol>p{
+    margin-top: -1px;
+    font-size: 21px;
+    padding-left: 5px;
+    text-shadow: 10px 10px 11px rgba(3, 6, 0, 0.51), 3px 5px 9px rgba(0, 0, 0, 0.35);
+}
+.el_number>p{
+    padding-left: 5px;
+    padding-top: 2px;
+
+}
+
+.element:nth-child(2){
+    float: right;
+}
+.element:nth-child(3),.element:nth-child(11),.element:nth-child(19){
+    clear: both;
+}
+
+.element:nth-child(10),.element:nth-child(5),.element:nth-child(6),.element:nth-child(7),.element:nth-child(8),.element:nth-child(9){
+    float: right;
+}
+
+.element:nth-child(13),.element:nth-child(14),.element:nth-child(15),.element:nth-child(16),.element:nth-child(17),.element:nth-child(18){
+    float: right;
+}
+
+
+.bg_1{
+    background: #00b6bc
+
+}
+
+.bg_2{
+    background: #1b67c9
+
+}
+
+.bg_3{
+    background: #a166a0
+
+}
+
+.bg_4{
+    background: #f2a32b
+
+}
+
+.bg_5{
+    background: #59cf6e
+
+}
+
+.bg_6{
+    background: #329090
+
+}
+
+.bg_7{
+    background: #f36d4a
+
+}
+
+.bg_8{
+    background: #f53951
+
+}
+
+#element_legend{
+    display: none;
+    position: absolute;
+    top: 76px;
+    left: 171px;
+    width: 563px;
+    height: 288px;
+    background-image:  url('../img/periodictable_elements/Tiles_main.png') ;
+    background-size: 100% ;
+    background-repeat:no-repeat;
+}
+#img_legend{
+    display: inline-block;
+    margin-top: 58px;
+    margin-left: 191px;
+}
+
+#close_legend{
+    height: 30px;
+    float: right;
+    margin-top: 6px;
+    margin-right: 8px;
+}
+
+
+
+#close_legend>img{
+    height: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#close_legend>img:hover{
+    height: 40px;
+    transition: 0.3s;
+}
+
+#elements_group_1{
+    width: 846px;
+    height: 235px;
+    margin: 0 auto;
+    padding-top: 35px;
+}
+
+#elements_group_2{
+    width: 846px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+#elements_group_3{
+    width: 705px;
+    height: 100px;
+    margin-right: 1000px auto;
+    float: right;
+    margin-right: 123px;
+}
+
+.fraction_majax,.fraction_majax_del{
+    font-size: 22px;
+}
+
+/* ////////////////////////////////  */
+
+
+#contentImg{
+    position: absolute;
+    left: 0px;
+    top: -5px;
+    height: 505px;
+    width: 1280px;
+    background-image:  url('../img/Bg_1.png');
+    background-size: 100% ;
+    z-index: -1
+}
+#contentImg1{
+    position: absolute;
+
+    left: 1045px;
+    top: 39px;
+    height: 416px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+
+.placeHolder{
+    position:absolute;
+    background:#CCCCCC;
+    height: 32px;
+}
+
+
+
+.glowEffect{
+    -moz-box-shadow: 0 0 10px #ff0000;
+    -webkit-box-shadow: 0 0 10px #ff0000;
+    box-shadow: 0px 0px 10px #ff0000;
+}
+
+#responceTxt,#tryAgainBtn,#showAnsBtn,#nextqueBtn2{
+    font-family: Roboto_med;
+}
+
+/************ common styles ***************/
+
+#titleBar{
+    position:absolute;
+    left:0px;
+    top:0px;
+    height:50px;
+    width:1280px;
+}
+
+
+#content {
+    position:absolute;
+    left:0px;
+    top:55px;
+    height:620px;
+    width:1280px;
+
+}
+
+.answer_icon{
+    width: 30px
+}
+
+#tips{
+    position: absolute;
+    /* float: right; */
+    top: 13px;
+    right: 140px;
+    /*width: 805px;*/
+    height: 200px;
+    background: red;
+}
+
+#tips>#tips_conteiner{
+    position: relative;
+    top: 0px;
+    right: 0px;
+}
+
+#tips>#tips_conteiner>span{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}

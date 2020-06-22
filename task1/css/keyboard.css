@@ -1,0 +1,256 @@
+@font-face {
+    font-family: "Roboto_med";
+    src: url("font/Roboto-Medium.ttf");
+}
+
+
+
+
+
+#keyboard{
+    width: 650px;
+    height: 367px;
+    font-family: Roboto_med;
+}
+
+#keyboard_operations_buttons{
+    background-image: url('../img/keypad/kpadbg_1.png');
+    background-size: 100%;
+    height: 66px;
+}
+
+#keyboard_buttons{
+    background-image: url('../img/keypad/kpadbg2.png');
+    background-size: 100%;
+    height: 353px;
+    position: relative;
+}
+
+#keyboard_close{
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    right: 10px;
+    top: 20px;
+    background-image: url('../img/keypad/close.png');
+    background-size: 100%;
+    cursor: pointer;
+    transition: 0.2s
+}
+
+#keyboard_close:hover{
+    height: 25px;
+    width: 25px;
+}
+
+#buttons_num,#buttons_let{
+    width: 76%;
+    height: 90%;
+    margin: 0px auto;
+
+}
+
+.button{
+    font-family: Roboto_med;
+    margin: 0 auto;
+    float: left;
+    margin-top: 13px;
+    margin-left: 4px;
+    height: 56px;
+    width: 45px;
+    text-align: center;
+    line-height: 60px;
+    color: white;
+    font-size: 32px;
+    border-radius: 4px;
+    display: inline-block;
+    background: -webkit-linear-gradient(top, #949494 0%,#232323 100%);
+    background: linear-gradient(to bottom, #a7a7a7 0%,#232323 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#727272', endColorstr='#232323',GradientType=0 );
+}
+
+.button:hover{
+    background: linear-gradient(to bottom, #a7a7a7 0%,#616161 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#727272', endColorstr='#232323',GradientType=0 );
+}
+
+#buttons_num>.button:nth-child(19)>p{
+    margin-left: -8px;
+    font-size: 27px;
+}
+
+#buttons_num>.button:nth-child(19)>sup{
+    font-size: 16px;
+    margin-left: 14px;
+    margin-top: -8px;
+}
+
+#buttons_num>.button:nth-child(19)>p,#buttons_num>.button:nth-child(19)>sup{
+    float: left;
+    display: inline-block;
+}
+
+#buttons_let>.button:nth-child(12){
+    margin-left: 28px;
+}
+
+#buttons_let>.button:nth-child(22){
+    /* margin-left: 37px; */
+    background-image: url('../img/keypad/caps_OFF.png');
+    background-size: 100%;
+}
+
+#buttons_let>.button:nth-child(32){
+    background-image: url('../img/keypad/123sym.png');
+    background-size: 100%;
+    width: 61px;
+}
+
+
+#buttons_num>.button:nth-child(23){
+    margin-left: 22px;
+}
+
+
+
+
+#buttons_num>.button:nth-child(31),#buttons_let>.button:nth-child(30){
+    background-image: url('../img/keypad/red_button.png');
+    background-size: 100%;
+    width: 76px;
+}
+
+#buttons_num>.button:nth-child(33){
+    background-image: url('../img/keypad/abc.png');
+    background-size: 100%;
+    width: 67px;
+    margin-left: 3px;
+}
+
+
+
+#buttons_num>.button:nth-child(34),#buttons_let>.button:nth-child(33){
+    width: 225px;
+    background-image: url('../img/keypad/space.png');
+    background-size: 100%;
+
+}
+
+#buttons_num>.button:nth-child(35),#buttons_let>.button:nth-child(34){
+    background-image: url('../img/keypad/black_button.png');
+    background-size: 100%;
+    width: 70px;
+}
+
+#buttons_num>.button:nth-child(36),#buttons_let>.button:nth-child(35){
+    width: 92px;
+    background-image: url('../img/keypad/Done_button.png');
+    background-size: 100%;
+
+}
+
+
+#operations_bck{
+    background: #4c4c4c;
+    width: 300px;
+    height:60px;
+    margin-left: 150px;
+    border-radius: 7px;
+    display: inline-block;
+    margin-top: 3px;
+}
+
+.sup,.sub,.fraction,.mixed_fraction{
+    height: 50px;
+    width: 50px;
+    /* border: 2px solid #8e8e8e; */
+    border-radius: 6px;
+    color: #ff9900;
+    margin-top: 4px;
+    margin-left: 20px;
+    cursor: pointer;
+    /* background: #333333; */
+    float: left;
+}
+
+.sup>div:first-child,.sub>div:first-child{
+    font-size: 35px;
+    margin-left: 5px;
+    margin-top: 6px;
+    display: inline-block;
+    float: left;
+}
+
+.sup>div:last-child,.sub>div:last-child{
+    float: left;
+    border: 2px solid #ff9900;
+    height: 11px;
+    width: 11px;
+    margin-top: 7px;
+    margin-left: 3px;
+
+}
+.sub>div:last-child{
+    margin-top: 29px;
+    margin-left: -2px;
+}
+
+
+
+
+.fraction>div:first-child,.fraction>div:last-child{
+    border: 2px solid #ff9900;
+    height: 12px;
+    width: 12px;
+    margin-left: 17px;
+}
+.fraction>div:first-child{
+    margin-top: 7px;
+}
+.fraction>div:last-child{
+    margin-top: 3px
+}
+.fraction>span{
+    border-bottom: 2px solid #ff9900;
+    display: block;
+    margin-left: 10px;
+    width: 29px;
+    height: 2px;
+}
+
+
+.mixed_fraction>div:first-child,.mixed_fraction>div:last-child,.mixed_fraction>div:nth-child(2){
+    border: 2px solid #ff9900;
+    height: 12px;
+    width: 12px;
+
+}
+.mixed_fraction>div:first-child{
+    margin-left: 5px;
+    margin-top: 18px;
+    float: left;
+}
+.mixed_fraction>div:nth-child(2){
+    margin-top: 7px;
+    margin-left: 4px;
+    float: left;
+}
+.mixed_fraction>div:last-child{
+    margin-top: 28px;
+    margin-left: 25px;
+}
+
+.mixed_fraction>span{
+    float: left;
+}
+
+.mixed_fraction>span {
+    float: left;
+    border-bottom: 2px solid #ff9900;
+    display: block;
+    margin-left: 3px;
+    width: 18px;
+    height: 2px;
+}
+
+
