@@ -57,7 +57,7 @@ parent = $(this).closest('div').html('true')
 if(change){
  change = false;
    $('.change').not(parent).html('change')
-  $(div).html('<input type="text" name="" value="գրի" class="inp">  <button type="button" name="button"  onclick="ok(this)">ok</button>')
+  $(div).html('<input type="text" name="" value="անուն" class="inp">  <button type="button" name="button"  onclick="ok(this)">ok</button>')
 console.log("changename ");
 
 }
@@ -70,14 +70,9 @@ function ok(divval){
   val= $(divval).prev().val()
 
    vvv = $(divval).closest("div").children(".name").html(val)
-    // alert(vvv)
       $('.change').html('change')
     console.log(vvv);
 
-
-    // $(div).innerHTML=''
-    //   change=false
-    // console.log(vvv);
 }
 
 function start(div) {
@@ -85,12 +80,9 @@ function start(div) {
   if (colorarray>=color.length) {
     colorarray=0
   }
-  // if (!change) {
     if  ($(div).children('.shkala').css('background-color') == 'rgba(0, 0, 0, 0)' ){
         $(div).children(".shkala").css({'background': color[colorarray]})
         colorarray++
-        // alert()
-
         }
         console.log($(div).children('.shkala').css('background-color'));
 
@@ -114,7 +106,7 @@ function start(div) {
     }
 
     document.getElementById('vote').innerHTML= allcount+"&nbsp Ձայն"
-  // }
+
 }
 
 
