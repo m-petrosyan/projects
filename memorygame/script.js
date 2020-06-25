@@ -1,6 +1,5 @@
 
   setInterval(function(){
- //находим теги img и ставим атрибуты
      $('img').attr({
         "ondrag":"return false",
         "ondragdrop":"return false",
@@ -99,7 +98,7 @@ if (next && !win) {
           b.style.visibility="hidden"
           win=false
         }, 1000)
-          // alert(x.getAttribute('person'))
+		
           ok--
           console.log(ok);
           if (ok==0) {
