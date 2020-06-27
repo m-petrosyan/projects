@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Fight</title>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+
+
+<div class="conteiner">
+  <div id="arena">
+
+    <div id="player1">
+      <div class="player_settings">
+        <div style="margin-bottom: 10px;">
+          <img src="img/heart.png" alt="">
+          <span class="health"></span>
+        </div>
+        <div style="margin-bottom: 10px;">
+          <img src="img/swords.png" alt="">
+          <span class="damage"></span>
+        </div>
+        <div>
+          <img src="img/shield.png" alt="">
+          <span class="armor"></span>
+        </div>
+      </div>
+
+      <div class="player_img">
+          <img src="img/player1.png" alt="">
+      </div>
+    </div>
+
+
+    <div id="player2">
+      <div class="player_settings">
+        <div style="margin-bottom: 10px;">
+          <img src="img/heart.png" alt="">
+          <span class="health"></span>
+        </div>
+        <div style="margin-bottom: 10px;">
+          <img src="img/swords.png" alt="">
+          <span class="damage"></span>
+        </div>
+        <div>
+          <img src="img/shield.png" alt="">
+          <span class="armor"></span>
+        </div>
+      </div>
+
+      <div class="player_img">
+          <img id="player2_img" src="img/player2.png" alt="">
+      </div>
+    </div>
+
+    <div id="win">
+      <h2>You win</h2>
+      <h3 id="win_money"></h3>
+      <button onclick="next()">Next level</button>
+    </div>
+
+    <div id="lost">
+      <h2 id="lost_text"></h2>
+      <button onclick="again()">Try again</button>
+    </div>
+
+    <div id="finish">
+      <h1>the game is over, you win</h1>
+      <button onclick="again()">Try again</button>
+    </div>
+
+    <div id="players_damage">
+      <div class="damage_value">
+        <div class="damage_new_value"></div>
+      </div>
+      <div class="damage_value">
+        <div class="damage_new_value"></div>
+      </div>
+    </div>
+
+    <div id="war_cloud">
+        <img src="img/war-cloud.png">
+    </div>
+
+    <div id="start_btn">
+      <button onclick="start()">Start</button>
+    </div>
+
+  <div id="fight-swords">
+    <img src="img/fight-swords.png">
+  </div>
+
+
+  </div>
+  <div id="shop">
+    <h1>Shop</h1>
+    <h5 id="money">
+      <div id="money_count"></div>
+      <div id="warning">you do not have enough funds</div>
+    </h5>
+    <div id="products">
+
+      <div class="product buy_health" onclick="buy({property:'health',price:8,value:15})">
+        <span> $8</span>
+        <img src="img/heart.png" alt="">
+        <span> +15 </span>
+      </div>
+
+      <div class="product buy_damage" onclick="buy({property:'damage',price:12,value:3})">
+        <span> $12</span>
+        <img src="img/swords.png" alt="">
+        <span> +3 </span>
+      </div>
+
+      <div class="product buy_armor"  onclick="buy({property:'armor',price:9,value:11})">
+        <span> $9</span>
+        <img src="img/shield.png" alt="">
+        <span> +11 </span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript" src="script.js"></script>
+
+  </body>
+</html>

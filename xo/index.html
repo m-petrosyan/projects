@@ -53,8 +53,6 @@ var start = 0;
       cikl++;
 
       if(start% 2==0){
-	  // остаток при деление 
-
           divclick.innerHTML ='x';
       }
       else{
@@ -70,9 +68,6 @@ var start = 0;
 function chackwinner(){
     var allblock = document.getElementsByClassName("divs");
 
-//իքսիկներ
-
-// result.style.visibility = "visible"
     if(allblock[0].innerHTML=="x" && allblock[1].innerHTML=="x" && allblock[2].innerHTML=="x" ){resulttext.innerHTML = "Հաղթեց x_ը a/1 , b/1 , c/1 գծով"+'<button type="button" id="again" name="button" onclick="noric()">Նորից</button>' ;result.style.visibility = "visible" }
   else if(allblock[3].innerHTML=="x" && allblock[4].innerHTML=="x" && allblock[5].innerHTML=="x" ){resulttext.innerHTML = "Հաղթեց x_ը a/2 , b/2 , c/2 գծով"+'<button type="button" id="again" name="button" onclick="noric()">Նորից</button>' ;result.style.visibility = "visible" }
   else if(allblock[6].innerHTML=="x" && allblock[7].innerHTML=="x" && allblock[8].innerHTML=="x" ){resulttext.innerHTML = "Հաղթեց x_ը a/3 , b/3 , a/3 գծով"+'<button type="button" id="again" name="button" onclick="noric()">Նորից</button>' ;result.style.visibility = "visible" }
@@ -85,7 +80,7 @@ function chackwinner(){
   else if(allblock[2].innerHTML=="x" && allblock[4].innerHTML=="x" && allblock[6].innerHTML=="x" ){resulttext.innerHTML = "Հաղթեց x_ը c/1 , b/2 , a/3 գծով"+'<button type="button" id="again" name="button" onclick="noric()">Նորից</button>' ;result.style.visibility = "visible" }
 
 
-//նոլիկներ
+
   else if(allblock[0].innerHTML=="o" && allblock[1].innerHTML=="o" && allblock[2].innerHTML=="o" ){resulttext.innerHTML = "Հաղթեց o_ն a/1 , b/1 , c/1 գծով"+'<button type="button" id="again" name="button" onclick="noric()">Նորից</button>' ;result.style.visibility = "visible" }
   else if(allblock[3].innerHTML=="o" && allblock[4].innerHTML=="o" && allblock[5].innerHTML=="o" ){resulttext.innerHTML = "Հաղթեց o_ն a/2 , b/2 , c/2 գծով"+'<button type="button" id="again" name="button" onclick="noric()">Նորից</button>' ;result.style.visibility = "visible" }
   else if(allblock[6].innerHTML=="o" && allblock[7].innerHTML=="o" && allblock[8].innerHTML=="o" ){resulttext.innerHTML = "Հաղթեց o_ն a/3 , b/3 , c/3 գծով"+'<button type="button" id="again" name="button" onclick="noric()">Նորից</button>' ;result.style.visibility = "visible" }
