@@ -5,6 +5,7 @@
 
 button{
   cursor: pointer;
+  transition: 0.5s;
 }
 
 #arena{
@@ -35,9 +36,7 @@ input{
   top: 184px;
   left: 540px;
   z-index: 1;
-  transition: .6s;
-  opacity: 0;
-  visibility: hidden;
+  display: none;
   transform:rotate(20deg);
   animation: mymove 2.4s;
   animation-iteration-count: infinite;
@@ -74,6 +73,7 @@ input{
   /* display: none; */
 }
 
+
 #start_btn>button{
   width: 100px;
   height: 49px;
@@ -84,6 +84,9 @@ input{
   border-radius: 11px;
 }
 
+#start_btn>button:hover{
+  background-color: #4caf50
+}
 
 .player_settings{
   margin-left:20px;
@@ -240,6 +243,7 @@ input{
   display: inline-block;
   margin: 20px;
   cursor: pointer;
+  transition: .5s
 }
 
 .product>span:last-child{
@@ -247,15 +251,27 @@ input{
 }
 
 .buy_health{
+  background-color: #1e6760;
+
+}
+
+.buy_health:hover{
   background-color: #009688;
 }
 
 .buy_damage{
+  background-color: #964741
+}
+.buy_damage:hover{
   background-color: #f44336
 }
 
 .buy_armor{
-  background-color: #3f51b5
+  background-color: #394375
+}
+
+.buy_armor:hover{
+  background-color:  #3f51b5
 }
 
 #warning{
@@ -285,6 +301,7 @@ input{
 }
 
 
+
 #win>button{
   margin-top: 5px;
   width: 160px;
@@ -294,6 +311,10 @@ input{
   color: #fff;
   border: none;
   border-radius: 11px;
+}
+
+#win>button:hover{
+  background-color: #46dc4c
 }
 
 #finish{
@@ -317,10 +338,19 @@ input{
   border-radius: 11px;
 }
 
+#finish>button:hover{
+  background-color: #009688
+}
+
 #lost{
   background-color: #ff5722c7;
 }
 
+
 #lost>button{
-  background-color: #4caf50
+  background-color: #4caf50;
+}
+
+#lost>button:hover{
+  background-color: #37ce3e
 }

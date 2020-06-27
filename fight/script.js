@@ -18,7 +18,7 @@ function start_values() {
   document.getElementsByClassName('health')[0].innerHTML = solder1.health
   document.getElementsByClassName('damage')[0].innerHTML = solder1.damage
   document.getElementsByClassName('armor')[0].innerHTML = solder1.armor
-  document.getElementById('money_count').innerHTML = 'you have $'+solder1.money
+  document.getElementById('money_count').innerHTML = 'You have $'+solder1.money
 
   document.getElementsByClassName('health')[1].innerHTML = solder2.health
   document.getElementsByClassName('damage')[1].innerHTML = solder2.damage
@@ -129,8 +129,8 @@ function draw() {
 
 function cloud() {
     setTimeout(function(){
-      warCloud.style.visibility="visible"
-      warCloud.style.opacity="1"
+      warCloud.style.display="block"
+
     },700)
 }
 
@@ -164,8 +164,7 @@ function theEendOfTheBattle() {
   swords.style.visibility="hidden"
   swords.style.opacity="0"
     setTimeout(function(){
-      warCloud.style.visibility="hidden"
-      warCloud.style.opacity="0"
+      warCloud.style.display="none"
     },100)
 }
 
@@ -185,7 +184,7 @@ function buy(x) {
       },2500)
   }
   health = solder1.health
-  document.getElementById('money_count').innerHTML = 'you have $'+solder1.money
+  document.getElementById('money_count').innerHTML = 'You have $'+solder1.money
 }
 
 
@@ -206,7 +205,7 @@ function win() {
     return
   }
   document.getElementById('win').style.display="block"
-  document.getElementById('money_count').innerHTML = 'you have $'+solder1.money
+  document.getElementById('money_count').innerHTML = 'You have $'+solder1.money
   document.getElementById('win_money').innerHTML= "You get $"+solder1.money
 }
 
@@ -234,16 +233,19 @@ function next() {
   document.getElementsByClassName('health')[0].innerHTML = health
 
   if (level == 2) {
-    solder2.health=90
-    solder2.damage=8
-    solder2.armor=15
+    solder2.health=60
+    solder2.damage=13
+    solder2.armor=4
     document.getElementById('player2_img').src = 'img/player3.png'
+    document.getElementById('arena').style.backgroundImage = "url('img/arena2.jpg')";
+
   }
   else if(level == 3) {
     solder2.health=140
     solder2.damage=9
     solder2.armor=25
     document.getElementById('player2_img').src = 'img/player4.png'
+    document.getElementById('arena').style.backgroundImage = "url('img/arena3.jpg')";
   }
 
   document.getElementsByClassName('health')[1].innerHTML = solder2.health
@@ -252,6 +254,7 @@ function next() {
 }
 
 function again() {
+  document.getElementById('arena').style.backgroundImage = "url('img/arena.jpg')";
   document.getElementById('lost').style.display='none'
   document.getElementById('finish').style.display="none"
   document.getElementById('player2_img').src = 'img/player2.png'
