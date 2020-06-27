@@ -28,8 +28,10 @@ input{
 #start_btn{
   position: absolute;
   left: 698px;top: 50%;
-  z-index: 10
+  z-index: 10;
+
 }
+
 
 #war_cloud{
   position: absolute;
@@ -63,16 +65,25 @@ input{
 #start_btn>button{
   width: 100px;
   height: 49px;
-  background: #673AB7;
   font-size: 28px;
   color: #fff;
   border: none;
   border-radius: 11px;
+  animation: start 5.4s;
+  animation-iteration-count: infinite;
+  border: 2px solid white;
 }
 
-#start_btn>button:hover{
-  background-color: #4caf50
+
+@keyframes start {
+   0%   {background-color:#673AB7}
+  25%   {background-color:#4caf50}
+  50%   {background-color:#2196f3}
+  75%   {background-color:#e91e63}
+  100%  {background-color:#673AB7}
 }
+
+
 
 .player_settings{
   margin-left:20px;
