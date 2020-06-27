@@ -8,22 +8,29 @@ body{
 #main{
   width: 680px;
   height: 200px;
-  margin: 0 auto;
+  margin: 100px auto auto auto;
   background-color: #282C34;
   border-radius: 10px;
 }
 
 ul{
-  line-height: 200px;
+    margin-top: 70px;
+    display: inline-block;
 }
 
 ul>li{
     display: inline-block;
-    margin-left: 40px;
-    font-size: 20px
+}
+
+
+ul>li:hover{
+    background-color:#f44336;
 }
 
 a{
-      color: white;
+    display: inherit;
+    font-size: 20px;
+    padding: 22px;
+     color: white;
      text-decoration: none;
 }

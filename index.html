@@ -10,7 +10,7 @@
   <body>
 
 <div id="main">
-    <ul>
+    <ul class="list" onmousemove="start()">
       <li>
           <a href="task1" target="_blank" class="hreftext">Task1</a>
       </li>
@@ -18,19 +18,39 @@
           <a href="task2" target="_blank" class="hreftext">Task2</a>
       </li>
       <li>
-		  <a href="fight" target="_blank" class="hreftext">Fight</a>
-      </li>      
-	  <li>
-		  <a href="memorygame" target="_blank" class="hreftext">Memory Game</a>
+		    <a href="fight" target="_blank" class="hreftext">Fight</a>
+      </li>
+	    <li>
+		    <a href="memorygame" target="_blank" class="hreftext">Memory Game</a>
       </li>
       <li>
-		  <a href="xo" target="_blank" class="hreftext">XO</a>
+		    <a href="xo" target="_blank" class="hreftext">XO</a>
       </li>
       <li>
           <a href="poll" target="_blank" class="hreftext">Poll</a>
       </li>
     </ul>
+    <div id="ok">ok</div>
 </div>
 
+	<script>
+
+
+
+function start() {
+
+  const colors = ['#f44336','#673ab7','#009688','#ffc107','#ff5722','#607d8b','#4CAF50','#E91E63','#795548','#3F51B5','#cddc39','#00BCD4']
+  const listItems = document.querySelectorAll('.list li');
+
+  function makeRandomArr(a, b) {
+    return Math.random() - 0.5;
+  }
+  colors.sort(makeRandomArr);
+
+  for (let i = 0; i < listItems.length; i++) {
+    listItems[i].addEventListener("mouseenter", function(event){this.style.backgroundColor =colors[i]});
+  }
+}
+	</script>
   </body>
 </html>
