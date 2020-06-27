@@ -197,7 +197,7 @@ function win() {
     solder1.money += moneyIncrease
   }
   else if (level == 3) {
-    moneyIncrease = 33
+    moneyIncrease = 30
     solder1.money += moneyIncrease
   }
   else if (level == 4) {
@@ -206,7 +206,7 @@ function win() {
   }
   document.getElementById('win').style.display="block"
   document.getElementById('money_count').innerHTML = 'You have $'+solder1.money
-  document.getElementById('win_money').innerHTML= "You get $"+solder1.money
+  document.getElementById('win_money').innerHTML= "You get $"+moneyIncrease
 }
 
 function reset() {
