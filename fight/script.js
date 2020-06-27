@@ -30,9 +30,7 @@ function start_values() {
    warCloud = document.getElementById('war_cloud')
    alive = true;
    level = 1;
-   moneyIncrease = 0;
-   player1= document.getElementsByClassName('player_img')[0]
-   player2= document.getElementsByClassName('player_img')[1]
+   playerImg= document.getElementsByClassName('player_img')
 }
 start_values()
 
@@ -45,8 +43,8 @@ start_values()
 function start(){
 
   document.getElementById('start_btn').style.display="none"
-  document.getElementsByClassName('player_img')[0].style.left="520px"
-  document.getElementsByClassName('player_img')[1].style.left="720px"
+  playerImg[0].style.left="520px"
+  playerImg[1].style.left="720px"
 
   swords.style.visibility="visible"
   swords.style.opacity="1"
@@ -98,8 +96,8 @@ function start(){
 function player1Death() {
   alive=false
   solder1.health=0;
-  player1.style.transform="rotate(90deg)";
-  player1.style.top="250px";
+  playerImg[0].style.transform="rotate(90deg)";
+  playerImg[0].style.top="250px";
   console.log('Solder1 death')
   document.getElementById('lost_text').innerHTML='You lost'
   document.getElementById('lost').style.display='block'
@@ -107,15 +105,13 @@ function player1Death() {
 
 function player2Death() {
   solder2.health=0;
-  player2.style.transform="rotate(-90deg)";
-  player2.style.top="250px";
+  playerImg[1].style.transform="rotate(-90deg)";
+  playerImg[1].style.top="250px";
   console.log('Solder2 death')
   if (alive) {
-    console.log('1');
       win()
   }
   else {
-        console.log('2');
     document.getElementById('lost_text').innerHTML='We have a draw'
   }
 }
@@ -190,8 +186,9 @@ function buy(x) {
 
 
 function win() {
-
+  var moneyIncrease = 0;
   level++
+
   if (level == 2) {
     moneyIncrease = 31
     solder1.money += moneyIncrease
@@ -204,6 +201,7 @@ function win() {
     document.getElementById('finish').style.display="block"
     return
   }
+  // left: 1500px;
   document.getElementById('win').style.display="block"
   document.getElementById('money_count').innerHTML = 'You have $'+solder1.money
   document.getElementById('win_money').innerHTML= "You get $"+moneyIncrease
@@ -211,17 +209,21 @@ function win() {
 
 function reset() {
 
-  player1.style.transform="rotate(0deg)";
-  player1.style.top="190px";
-  player2.style.transform="rotate(0deg)";
-  player2.style.top="190px";
+  playerImg[0].style.transform="rotate(0deg)";
+  playerImg[0].style.top="190px";
+  playerImg[1].style.transform="rotate(0deg)";
+  playerImg[1].style.top="190px";
 
-  document.getElementsByClassName('player_img')[0].style.left="0px"
-  document.getElementsByClassName('player_img')[1].style.display="none"
-  document.getElementsByClassName('player_img')[1].style.left="1200px"
+  playerImg[0].style.left="30px"
+  playerImg[1].style.display="none"
+  playerImg[1].style.left="1500px"
+
   setTimeout(function() {
-      document.getElementsByClassName('player_img')[1].style.display="block"
+    playerImg[1].style.display="block"
+  },500)
+  setTimeout(function() {
       document.getElementById('start_btn').style.display="block"
+      playerImg[1].style.left="1200px"
   },1200)
 
 }
@@ -236,7 +238,7 @@ function next() {
     solder2.health=60
     solder2.damage=13
     solder2.armor=4
-    document.getElementById('player2_img').src = 'img/player3.png'
+    player2_img.src = 'img/player3.png'
     document.getElementById('arena').style.backgroundImage = "url('img/arena2.jpg')";
 
   }
@@ -244,7 +246,7 @@ function next() {
     solder2.health=140
     solder2.damage=9
     solder2.armor=25
-    document.getElementById('player2_img').src = 'img/player4.png'
+    player2_img.src = 'img/player4.png'
     document.getElementById('arena').style.backgroundImage = "url('img/arena3.jpg')";
   }
 
@@ -257,7 +259,7 @@ function again() {
   document.getElementById('arena').style.backgroundImage = "url('img/arena.jpg')";
   document.getElementById('lost').style.display='none'
   document.getElementById('finish').style.display="none"
-  document.getElementById('player2_img').src = 'img/player2.png'
+  player2_img.src = 'img/player2.png'
   start_values()
   reset()
 }
