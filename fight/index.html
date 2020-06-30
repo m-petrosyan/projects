@@ -9,8 +9,26 @@
 
 
 <div class="conteiner">
-  <div id="arena">
 
+  <div id="instruction">
+    <div onclick="howToPlay('play')"> How to play </div>
+    <div onclick="howToPlay('win')"> Win hint </div>
+  </div>
+
+  <div id="instruction_conteiner">
+    <button onclick="closeInstruction()">X</button>
+    <div class="hint">
+      <div>In the "Shop" section, buy one of the boosters and click Start.</div>
+      <img src="img/howplay.jpg" height="90%">
+    </div>
+
+    <div class="hint">
+      <img src="img/win.png" height="90%">
+    </div>
+
+  </div>
+
+  <div id="arena">
     <div id="player1">
       <div class="player_settings">
         <div style="margin-bottom: 10px;">
@@ -113,10 +131,10 @@
         <span> +3 </span>
       </div>
 
-      <div class="product buy_armor"  onclick="buy({property:'armor',price:9,value:11})">
+      <div class="product buy_armor"  onclick="buy({property:'armor',price:9,value:17})">
         <span> $9</span>
         <img src="img/shield.png" alt="">
-        <span> +11 </span>
+        <span> +17 </span>
       </div>
 
     </div>
