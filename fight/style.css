@@ -34,7 +34,25 @@ button{
   background-color: #ff5722
 }
 
-#instruction_conteiner>.hint>div{
+#shield_info>span{
+  padding: 5px;
+  background-color: #009688;
+}
+#shield_info>img{
+    height: 25px;
+}
+
+#shield_info{
+  font-size: 18px;
+  color: #fff;
+  background: #E91E63;
+  height: 40px;
+  padding: 5px;
+  width: 85%;
+  margin: auto;
+}
+
+#instruction_conteiner>.hint>#hint_text{
   color: black;
   font-size: 27px;
   font-family: sans-serif;
