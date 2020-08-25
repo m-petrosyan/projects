@@ -1,6 +1,10 @@
 
 
+
+
+
 function start_values() {
+
   solder1 = {
     health:55,
     damage:5,
@@ -10,33 +14,41 @@ function start_values() {
 
 
 
- solder2 =[
-   {
-    health:90,
-    damage:4,
-    armor:4,
-    img: 'img/player2.png',
-    bg: "url('img/arena.jpg')",
-    reward:31
-  },
-   {
-    health:40,
-    damage:22,
-    armor:2,
-    img: 'img/player3.png',
-    bg: "url('img/arena2.jpg')",
-    reward: 27
-  },
-  {
-    health:130,
-    damage:12,
-    armor:23,
-    img: 'img/player4.png',
-    bg: "url('img/arena3.jpg')",
-    reward : 0
-  },
-]
+  solder2 =[
+     {
+      health:90,
+      damage:4,
+      armor:4,
+      img: 'img/player2.png',
+      bg: "url('img/arena.jpg')",
+      reward:31
+    },
+     {
+      health:40,
+      damage:22,
+      armor:2,
+      img: 'img/player3.png',
+      bg: "url('img/arena2.jpg')",
+      reward: 27
+    },
+    {
+      health:130,
+      damage:12,
+      armor:23,
+      img: 'img/player4.png',
+      bg: "url('img/arena3.jpg')",
+      reward : 0
+    },
+  ]
 
+
+
+  boosters = {
+    health:{price:8,value:15,img:'img/heart.png'},
+    damage:{price:12,value:3,img:'img/swords.png'},
+    armor:{price:9,value:17,img:'img/shield.png'}
+  }
+  arr = Object.entries(boosters)
 
 
 
@@ -44,7 +56,7 @@ function start_values() {
   swords = document.getElementById('fight-swords')
   playerDamage = document.getElementsByClassName('damage_new_value')
   warCloud = document.getElementById('war_cloud')
-  alive = true;
+  endofbattle = alive = true;
   lastItem = '';
   level = 0;
   playerImg= document.getElementsByClassName('player_img')
@@ -65,9 +77,6 @@ start_values()
 
 
 
-
-
-
 function start(){
 
   document.getElementById('start_btn').style.display="none"
@@ -80,7 +89,7 @@ function start(){
   console.log('Solder1 health '+solder2[level].health)
   console.log('Solder2 health '+solder2[level].health)
 
-
+  endofbattle=false
   cloud();
 
   var interval = setInterval(function(){
@@ -99,15 +108,15 @@ function start(){
           else if (solder2[level].health<=0) {
             player2Death()
           }
-
+          endofbattle=true
           clearInterval(interval)
           setTimeout(function(){ theEendOfTheBattle()}, 500);
           return
       }
 
       else{
-        console.log('Solder1 health '+solder1.health)
-        console.log('Solder2 health '+solder2[level].health)
+        console.log('Solder1 health : '+solder1.health.toFixed(2)+' damage : '+(solder2[level].damage-(solder2[level].damage/100*solder1.armor)))
+        console.log('Solder2 health : '+solder2[level].health.toFixed(2)+' damage : '+(solder1.damage-(solder1.damage/100*solder2[level].armor)))
       }
       damageResult()
     }
@@ -153,7 +162,6 @@ function draw() {
 function cloud() {
     setTimeout(function(){
       warCloud.style.display="block"
-
     },700)
 }
 
@@ -170,9 +178,6 @@ function damageResult() {
 
     playerDamage[0].innerHTML='-' + (solder2[level].damage-(solder2[level].damage/100*solder1.armor)).toFixed(1)
     playerDamage[1].innerHTML='-' + (solder1.damage-(solder1.damage/100*solder2[level].armor)).toFixed(1)
-
-    console.log('playerDamage1 ' +(solder2[level].damage-(solder2[level].damage/100*solder1.armor)));
-    console.log('playerDamage2 ' +(solder1.damage-(solder1.damage/100*solder2[level].armor)));
 
     playerDamage[0].style.top='-40px'
     playerDamage[1].style.top='-40px'
@@ -194,20 +199,22 @@ function theEendOfTheBattle() {
 
 
 function buy(x) {
-
-    if (solder1.money >= x.price) {
-      solder1.money-=x.price
-      solder1[x.property]+=x.value
-      document.getElementsByClassName(x.property)[0].innerHTML = solder1[x.property]
+  if (endofbattle) {
+      if (solder1.money >= boosters[x].price) {
+        solder1.money-=boosters[x].price
+        solder1[x]+=boosters[x].value
+        document.getElementsByClassName(x)[0].innerHTML = solder1[x]
+        buyButtons()
+      }
+      else{
+      document.getElementById('warning').style.display='block'
+        setTimeout(function(){
+          document.getElementById('warning').style.display='none'
+        },2500)
     }
-    else{
-    document.getElementById('warning').style.display='block'
-      setTimeout(function(){
-        document.getElementById('warning').style.display='none'
-      },2500)
+    health = solder1.health
+    document.getElementById('money_count').innerHTML = 'You have $'+solder1.money
   }
-  health = solder1.health
-  document.getElementById('money_count').innerHTML = 'You have $'+solder1.money
 }
 
 
@@ -218,7 +225,7 @@ function win() {
   document.getElementById('win_money').innerHTML= "You get $"+ solder2[level].reward
   level++
 
-   if (level == 3) {
+   if (level == solder2.length) {
     document.getElementById('finish').style.display="block"
     return
   }
@@ -250,6 +257,7 @@ function reset() {
 function next() {
   document.getElementById('win').style.display="none"
   reset()
+  buyButtons()
   solder1.health = health
   document.getElementsByClassName('health')[0].innerHTML = health
 
@@ -271,10 +279,11 @@ function again() {
   player2_img.src = solder2[0].img
   start_values()
   reset()
+  buyButtons()
 }
 
 function howToPlay(x) {
-  
+
   hint[0].style.display='none'
   hint[1].style.display='none'
   if (lastItem === x) {
@@ -296,3 +305,18 @@ function closeInstruction() {
   document.getElementById('instruction_conteiner').style.display='none'
   lastItem = ''
 }
+
+
+function buyButtons() {
+  document.getElementById('products').innerHTML=''
+  for (var i = 0; i < arr.length; i++) {
+    document.getElementById('products').innerHTML +=
+    ` <div class="product buy_${Object.keys(boosters)[i]} ${solder1.money < Object.entries(boosters)[i][1].price && 'not_enough'}" onclick='buy("${Object.keys(boosters)[i]}")'>
+        <span>${Object.entries(boosters)[i][1].price}</span>
+        <img src=${Object.entries(boosters)[i][1].img} alt="">
+        <span> +${Object.entries(boosters)[i][1].value} </span>
+      </div>
+    `
+  }
+}
+buyButtons()

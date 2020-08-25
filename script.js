@@ -1,8 +1,8 @@
 
 function start() {
 
-  const colors = ['#f44336','#673ab7','#009688','#ffc107','#ff5722','#607d8b','#4CAF50','#E91E63','#795548','#3F51B5','#cddc39','#00BCD4']
-  const listItems = document.querySelectorAll('.list li');
+  const colors = ['#f44336','#673ab7','#ff5722','#607d8b','#4CAF50','#E91E63','#795548','#3F51B5','#cddc39','#00BCD4']
+  const listItems = document.querySelectorAll('.list li a');
 
   function makeRandomArr(a, b) {
     return Math.random() - 0.5;

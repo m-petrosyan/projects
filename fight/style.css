@@ -27,7 +27,7 @@ button{
   color: white;
   font-weight: bold;
   text-align: center;
-  cursor: pointer;
+  cursor: help;
 }
 
 #instruction>div:last-child{
@@ -428,4 +428,9 @@ input{
 
 #lost>button:hover{
   background-color: #37ce3e
+}
+
+.not_enough{
+  cursor: not-allowed;
+  opacity: .3
 }
